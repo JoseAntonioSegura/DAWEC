@@ -50,7 +50,7 @@
    -  A continuación se muestra un Gif con el resultado:
 ![Foto Ejercicio 4](https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif%20(3).gif)
   ### ◽◾Ejercicio 5:
-  - **Objetivo:** realizar dos bucles .
+  - **Objetivo:** realizar dos bucles donde el primero muestre los numeros del 1 al 10 y en el segundo solo los numeros pares .
    - **Solución:** en este ejercicio, he creado 2 bucles, en el primero he utilizado "for" donde se muestra por consola los numeros del 1 al 10, y para el segundo bucle he usado while, donde solo imprimia por consola los numeros pares haciendo uso del "* % 2" para verificar de que sea par o no.
    -  A continuación se muestra un Gif con el resultado:
   ![Foto Ejercicio 5](https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif%20(4).gif)
