@@ -31,7 +31,7 @@
   ### Ejercicio 1:
    - En este ejercicio, he implementado un ejemplo de cada variable para posteriormente mostrarlos por consola de forma conjunta separandolos con "\n" para así tenerlos de forma más ordenada.
    -  A continuación se muestra un Gif con el resultado:
-  ![Foto Ejercicio 1](./https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif.gif)
+  ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif.gif)
   ### Ejercicio 2:
    - En este ejercicio, he creado dos variables numericas, y he realizado diferentes operaciones usando las mismas variables.
    -  A continuación se muestra un Gif con el resultado:
