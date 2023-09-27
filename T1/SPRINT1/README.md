@@ -25,15 +25,15 @@
 
 - *Realizaremos los ejercicios según las indicaciones del profesor con ayuda del video y la teoría además del uso de herramientas como ChatGPT entre otros.*
 ## Diseño de la solución.
-- Para realizar este apartado de la Tarea de Boletín 1, primeramente he visto el video del profesor más la ayuda de la teoría y complementado el uso con ChatGPT, empezando a realizar los ejercicios indicados anteriormente.
+- Para realizar este apartado de la Tarea de Boletín 1, primeramente he visto el video del profesor más la ayuda de la teoría y complementado el uso con ChatGPT se empezara a realizar los ejercicios indicados anteriormente.
 ## Implementación de la solución.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con imagenes y gifs.
   ### Ejercicio 1:
    - En este ejercicio, he implementado un ejemplo de cada variable para posteriormente mostrarlos por consola de forma conjunta separandolos con "\n" para así tenerlos de forma más ordenada.
    -  A continuación se muestra un Gif con el resultado:
-   -  
+  ![Foto Ejercicio 1](./https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif.gif)
   ### Ejercicio 2:
-   - En este ejercicio, he creado dos variables numericas, y he realizado diferentes operaciones usando las variables .
+   - En este ejercicio, he creado dos variables numericas, y he realizado diferentes operaciones usando las mismas variables.
    -  A continuación se muestra un Gif con el resultado:
 
   ### Ejercicio 3:
@@ -45,6 +45,6 @@
    -  A continuación se muestra un Gif con el resultado:
 
   ### Ejercicio 5:
-   - En este ejercicio, he creado 2 bucles, en el primero he utilizado "for" donde se muestrapor consola los numeros del 1 al 10, y para el segundo bucle he usado while, donde solo imprimia por consola los numeros pares haciendo uso del "%".
+   - En este ejercicio, he creado 2 bucles, en el primero he utilizado "for" donde se muestra por consola los numeros del 1 al 10, y para el segundo bucle he usado while, donde solo imprimia por consola los numeros pares haciendo uso del "* % 2" para verificar de que sea par o no.
    -  A continuación se muestra un Gif con el resultado:
    -  
