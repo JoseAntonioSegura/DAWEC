@@ -32,7 +32,7 @@
   - **Objetivo:** mostrar un ejemplo de cada variable y mostrarlos por consola junto a su tipo.
    - **Solución:** en este ejercicio, he implementado un ejemplo de cada variable para posteriormente mostrarlos por consola así como su tipo.
    -  A continuación se muestra un Gif con el resultado:
-  ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif%20(5).gif)
+  ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/753c479327283806c063ef0e47c0bad6d42314a8/Videos/ezgif.com-video-to-gif%20(5).gif)
   ### ◽◾Ejercicio 2:
    - **Objetivo:** crear dos variables y mostrar un ejemplo siendo usadas para una operación por consola.
    - **Solución:** en este ejercicio, he creado dos variables numericas, y he realizado diferentes operaciones usando las mismas variables.
