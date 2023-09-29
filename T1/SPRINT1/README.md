@@ -27,7 +27,7 @@
 ## ✍Diseño de la solución.
 - Para realizar este apartado de la Tarea de Boletín 1, primeramente he visto el video del profesor más la ayuda de la teoría y complementado el uso con ChatGPT se empezara a realizar los ejercicios indicados anteriormente.
 ## 🧾Pruebas.
-- Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con imagenes y gifs.
+- Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
   ### ◽◾Ejercicio 1:
   - **Objetivo:** mostrar un ejemplo de cada variable.
    - **Solución:** en este ejercicio, he implementado un ejemplo de cada variable para posteriormente mostrarlos por consola de forma conjunta separandolos con "\n" para así tenerlos de forma más ordenada.
