@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <head>
+        <title>Ejercicio 1</title>
+        <style>
+            body {
+                text-align: center;
+                margin: 100px;
+            }
+    
+            button {
+                font-size: 24px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+        </style>
+    
+    </head>
+    <body>
+        <h1>Ejercicio 1 (Cambiar Color)</h1>
+        <h2>José Antonio Segura Gómez</h2>
+        <button  id="btnPrincipal" onclick="cambiarColor()">Cambiar color</button>
+        
+        <script>
+            const colores = ['#FF57999', '#39FF57', '#9733FF', '#78FFFF', '#FF33FF', '#FFFF87', '#354333'];
+    
+            function obtenerColorAleatorio() {
+                const indiceAleatorio = Math.floor(Math.random() * colores.length);
+                return colores[indiceAleatorio];
+            }
+    
+            function cambiarColor() {
+                const colorAleatorio = obtenerColorAleatorio();
+                document.body.style.backgroundColor = colorAleatorio;
+            }
+        </script>
+    </body>
+</html>

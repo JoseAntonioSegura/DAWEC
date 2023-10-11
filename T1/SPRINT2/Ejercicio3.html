@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 2 (Calcular el área de un rectángulo)</h1>
+    <h2>José Antonio Segura Gómez</h2>
+    <label for="ancho">Ancho:</label>
+    <input type="number" id="ancho" min="1" value="1">
+    <br><br>
+    <label for="largo">Largo:</label>
+    <input type="number" id="largo" min="1" value="1">
+    <br><br>
+    <button id="btnCalcularArea">Calcular Área</button>
+    <br>
+    <h4 style="color: blue;" id="resultado"></h4>
+
+    <script>
+        const calcularAreaBtn = document.getElementById('btnCalcularArea');
+        const resultado = document.getElementById('resultado');
+
+        calcularAreaBtn.addEventListener('click', function () {
+            const ancho = parseFloat(document.getElementById('ancho').value);
+            const largo = parseFloat(document.getElementById('largo').value);
+
+            if (!isNaN(ancho) && !isNaN(largo)) {
+                const area = ancho * largo;
+                resultado.textContent = `El área del rectángulo es de: ${area} unidades cuadradas.`;
+            } else {
+                resultado.textContent = 'Ingrese valores válidos para el ancho y el largo.';
+            }
+        });
+    </script>
+</body>
+</html>
