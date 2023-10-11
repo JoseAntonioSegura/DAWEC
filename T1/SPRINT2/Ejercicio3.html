@@ -1,62 +1,52 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Ejercicio 3</title>
+    <title>Listado Dinámico</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        input {
-            margin-right: 10px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
         }
 
         ul {
-            list-style: none;
+            list-style-type: disc;
+            list-style-position: inside; 
             padding: 0;
         }
 
         li {
+            padding: 5px;
             margin: 5px 0;
+        }
+
+        button {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Ejercicio 2 (Calcular el área de un rectángulo)</h1>
+    <h1>Ejercicio 3 (Listado Dinámico)</h1>
     <h2>José Antonio Segura Gómez</h2>
-    <label for="ancho">Ancho:</label>
-    <input type="number" id="ancho" min="1" value="1">
-    <br><br>
-    <label for="largo">Largo:</label>
-    <input type="number" id="largo" min="1" value="1">
-    <br><br>
-    <button id="btnCalcularArea">Calcular Área</button>
-    <br>
-    <h4 style="color: blue;" id="resultado"></h4>
+    <input type="text" id="inputItem" placeholder="Escribe un ítem">
+    <button id="addItemButton">Añadir a la lista</button>
+    <ul id="itemList"></ul>
 
     <script>
-        const calcularAreaBtn = document.getElementById('btnCalcularArea');
-        const resultado = document.getElementById('resultado');
+        const inputItem = document.getElementById('inputItem');
+        const addItemButton = document.getElementById('addItemButton');
+        const itemList = document.getElementById('itemList');
 
-        calcularAreaBtn.addEventListener('click', function () {
-            const ancho = parseFloat(document.getElementById('ancho').value);
-            const largo = parseFloat(document.getElementById('largo').value);
+        addItemButton.addEventListener('click', () => {
+            const newItemText = inputItem.value;
 
-            if (!isNaN(ancho) && !isNaN(largo)) {
-                const area = ancho * largo;
-                resultado.textContent = `El área del rectángulo es de: ${area} unidades cuadradas.`;
-            } else {
-                resultado.textContent = 'Ingrese valores válidos para el ancho y el largo.';
+            if (newItemText.trim() !== '') {
+                const newItem = document.createElement('li');
+                newItem.textContent = newItemText;
+
+                itemList.appendChild(newItem);
+
+                inputItem.value = '';
             }
         });
     </script>
