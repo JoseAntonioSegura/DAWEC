@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efecto al pasar el ratón</title>
+    <style>
+        body {
+            text-align: center; /* Centra los elementos del body horizontalmente */
+        }
+
+        .mi-div {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: lightgray;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .mi-div:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .mi-div h1 {
+            margin: 10; 
+            padding: 10px;
+        }
+
+        .mi-div p {
+            margin-top: 10px;
+            text-align: left; 
+        }
+
+        .mi-div img {
+            height: 100px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 4 (Div Dinámico)</h1>
+    <h2>José Antonio Segura Gómez</h2>
+    <div class="mi-div" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        <h1>Bethesda</h1>
+        <p>Bethesda Game Studios® es el laureado equipo de desarrollo conocido en todo el mundo por su innovador trabajo en las sagas de The Elder Scrolls y Fallout. Ha creado The Elder Scrolls IV: Oblivion®, "Juego del año" en 2006; Fallout® 3, "Juego del año" en 2008; The Elder Scrolls V: Skyrim®, "Juego del año" en 2011; y más recientemente, Fallout® 4, que ganó el premio al "Juego del año" de 2015 y batió varios récords. Bethesda Game Studios se ha ganado una reputación por ser uno de los estudios de desarrollo más respetados y consagrados de la industria.</p>
+        <img src="https://i.pinimg.com/originals/2d/2a/8d/2d2a8db77e934113e53ff1bfcf1db603.jpg" alt="">
+    </div>
+    <div class="mi-div" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        <h1>Konami</h1>
+        <p>Konami Corporation es una empresa dedicada al desarrollo de juguetes, tarjetas de colección, anime, tokusatsu, máquinas tragamonedas, Arcades y videojuegos. Es una compañía famosa por sus populares series de videojuegos, tales como Castlevania, Contra, Dance Dance Revolution.</p>
+        <img src="https://www.fantasymundo.com/wp-content/uploads/2019/05/Metal-Gear-Solid-3-Snake-Eater.jpg" alt="">
+    </div>
+    <div class="mi-div" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        <h1>Attlus</h1>
+        <p>Atlus Co., Ltd. (株式会社アトラス Kabushiki gaisha Atorasu?) es una desarrolladora de videojuegos japonesa ubicada en Tokio, filial de SEGA. Son globalmente conocidos por desarrollar Shin Megami Tensei, Persona, Etrian Odyssey entre otros. La mascota de la empresa es "Jack Frost",
+             un muñeco de nieve que aparece en la franquicia Shin Megami Tensei. Sus oficinas americanas están en California, y las japonesas en Tokio.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXdWocCm6c1cZo_BJXUtRVBc3PEmQ8HASonw&usqp=CAU" alt="">
+
+    </div>
+    <div class="mi-div" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">
+        <h1>CD Projekt</h1>
+        <p>CD Projekt RED es un estudio de videojuegos polaco que es filial de la desarrolladora y distribuidora polaca CD Projekt S.A.. La compañía fue fundada en febrero de 1995 como el estudio desarrollador de la empresa CD Projekt. El primer juego producido fue The Witcher,
+             basado en los libros de Andrzej Sapkowski.</p>
+            <img src="https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f" alt="">
+    </div>
+
+    <script>
+        function cambiarEstilos(elemento) {
+            elemento.style.backgroundColor = "blue";
+            elemento.style.color = "white";
+        }
+
+        function restaurarEstilos(elemento) {
+            elemento.style.backgroundColor = "lightgray";
+            elemento.style.color = "black";
+        }
+    </script>
+</body>
+</html>
