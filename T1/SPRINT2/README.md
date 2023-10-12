@@ -38,33 +38,34 @@ Especificaciones:
 ## 🧾Pruebas.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
   ### ◽◾Ejercicio 1:
-  - **Objetivo:** crear una página web que contenga un botón llamado ¨Cambiar color¨, que al hacer clic en el, el fondo de la página cambiara de forma aleatoria.
-   - **Solución:** en este ejercicio, he creado un botón con su etiqueta correspondiente ¨Cambiar color¨, he creado un Script en el cuál genera un color aleatorio de fondo haciendo
+  - **Objetivo:** crear una página web que contenga un botón llamado ¨Cambiar color¨, al hacer clic en él el color del fondo de la página cambiará aleatoriamente.
+   - **Solución:** en este ejercicio he creado un botón con su etiqueta correspondiente ¨Cambiar color¨, he creado un Script en el cuál genera un color aleatorio de fondo haciendo
    uso del ¨Math.random¨.
    -  A continuación se muestra un Gif con el resultado:
   ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF1.gif)
   ### ◽◾Ejercicio 2:
    - **Objetivo:** crear una página web que contenga dos campos de entrada donde se introduzcan el ancho y alto de un rectángulo, junto con un botón llamado ¨Calcular Área¨, al 
    pulsar dicho botón deberá aparecer un parrafo donde se indique el calculo del area del rectángulo.
-   - **Solución:** en este ejercicio, he creado dos campos de entrada y posteriormente un botón denominado ¨Calcular Área¨, he creado un Script donde al pulsar el botón recoja
-   los dos valores de entrada y los multiplique, devolviendo el area del rectángulo en un parrafo .
+   - **Solución:** en este ejercicio he creado dos campos de entrada y posteriormente un botón denominado ¨Calcular Área¨, he creado un Script donde al pulsar el botón recoja
+   los dos valores de entrada y los multiplique, devolviendo el area del rectángulo en un parrafo.
    -  A continuación se muestra un Gif con el resultado:
 ![Foto Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF2.gif)
 
   ### ◽◾Ejercicio 3:
    - **Objetivo:** crear una página web que contenga un campo de entrada y un botón que permita al usuario agregar elementos a una lista de forma dinámica.
-   - **Solución:** en este ejercicio, he creado una página web con un campo de entrada y un botón denominado ¨Áñadir a la lista¨, he 
+   - **Solución:** en este ejercicio he creado una página web con un campo de entrada y un botón denominado ¨Áñadir a la lista¨,  he 
    realizado un Script donde al hacer clic en el botón este recojera el contenido del campo de entrada el cuál se agrega como un nuevo item en la lista.
    -  A continuación se muestra un Gif con el resultado:
 ![Foto Ejercicio 3](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF3.gif)
   ### ◽◾Ejercicio 4:
-   - **Objetivo:** crear una página web el cuál contenga varios div, al posicionarse encima de ellos el fondo y la tipografía cambiará de color a azul y blanco respectivamente .
-   - **Solución:** en este ejercicio he creado una página web con 4 div, los cuales tienen diferentes contenidos, con el uso de "mouseover" y "mouseout¨ he creado un script
-   que va cambiando el color del fondo a azul al posicionarse encima de ellos junto a una tipografía de color blanco, al mover el ratón fuera de los respectivos div, estos
+   - **Objetivo:** crear una página web el cuál contenga varios div, al posicionarse encima de ellos el fondo y la tipografía cambiará de color a azul y blanco respectivamente.
+   - **Solución:** en este ejercicio he creado una página web con 4 div los cuales tienen diferentes contenidos, con el uso de "mouseover" y "mouseout¨ he creado un script
+   que va cambiando el color del fondo a azul al posicionarse encima de ellos junto a una tipografía de color blanco, al mover el ratón fuera de los respectivos div estos
    volverán a su estado original:
+   -  A continuación se muestra un Gif con el resultado:
 ![Foto Ejercicio 4](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF4.gif)
   ### ◽◾Ejercicio 5:
   - **Objetivo:** añadir a la página web proporcionada por el profesor un Script donde al realizar clic en cualquier elemento se muestre una alerta con el XPath correspondiente.
-  - **Solución:** en este ejercicio, he añadido a la pagina web proprocionada del profesor un Script, el cual calcula el XPath de cualquier elemento al que se le haga clic devolviendo una alerta. (No se puede mostrar el XPath del botón Iframe debido a motivos de seguridad de Google):
+  - **Solución:** en este ejercicio he añadido a la pagina web proprocionada del profesor un Script el cual calcula el XPath de cualquier elemento al que se le haga clic devolviendo una alerta. (No se puede mostrar el XPath del botón Iframe debido a motivos de seguridad de Google):
   -  A continuación se muestra un Gif con el resultado:
   ![Foto Ejercicio 5](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF5.gif)
