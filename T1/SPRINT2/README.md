@@ -10,17 +10,17 @@
 - Agrega un botón etiquetado "Calcular Área".
 - Al hacer clic en el botón, calcula el área del rectángulo y muestra el resultado en un elemento `<p>` en la página.
 - Pista: Área del rectángulo = ancho x alto.
-  ###   3️⃣ Listado Dinámico:
+ ### 3️⃣ Listado Dinámico:
 - Crea una página con un campo de entrada y un botón etiquetado "Añadir a la lista".
 - También debes tener una lista vacía (`<ul>` o `<ol>`).
 - Cuando el usuario escribe algo en el campo de entrada y hace clic en el botón, entonces el contenido del campo debe agregarse como un nuevo ítem (`<li>`) a la lista.
 - Pista: Utiliza el método `.createElement()` y `.appendChild()` del DOM.
-  ###  4️⃣  Hover y Estilo Dinámico:
+ ###  4️⃣  Hover y Estilo Dinámico:
 - Diseña una página con varios elementos div, cada uno con un texto diferente.
 - Al pasar el ratón sobre un div, cambia su color de fondo a azul y el texto a blanco.
 - Al mover el ratón fuera del div, restaura sus estilos originales.
 - Pista: Considera usar eventos como "mouseover" y "mouseout".
-  ###  5️⃣ Detección de Clics y Generación de XPath
+ ###  5️⃣ Detección de Clics y Generación de XPath:
 - Desarrolla una página web que, al hacer clic en cualquier elemento, muestre el XPath único de ese elemento en un cuadro de alerta o en una sección dedicada de la página.
 Especificaciones:
 1. Detección de Clics:
@@ -42,29 +42,29 @@ Especificaciones:
    - **Solución:** en este ejercicio, he creado un botón con su etiqueta correspondiente ¨Cambiar color¨, he creado un Script en el cuál genera un color aleatorio de fondo haciendo
    uso del ¨Math.random¨.
    -  A continuación se muestra un Gif con el resultado:
-  ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/753c479327283806c063ef0e47c0bad6d42314a8/Videos/ezgif.com-video-to-gif%20(5).gif)
+  ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF1.gif)
   ### ◽◾Ejercicio 2:
    - **Objetivo:** crear una página web que contenga dos campos de entrada donde se introduzcan el ancho y alto de un rectángulo, junto con un botón llamado ¨Calcular Área¨, al 
    pulsar dicho botón deberá aparecer un parrafo donde se indique el calculo del area del rectángulo.
    - **Solución:** en este ejercicio, he creado dos campos de entrada y posteriormente un botón denominado ¨Calcular Área¨, he creado un Script donde al pulsar el botón recoja
    los dos valores de entrada y los multiplique, devolviendo el area del rectángulo en un parrafo .
    -  A continuación se muestra un Gif con el resultado:
-![Foto Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif%20(1).gif)
+![Foto Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF2.gif)
 
   ### ◽◾Ejercicio 3:
    - **Objetivo:** crear una página web que contenga un campo de entrada y un botón que permita al usuario agregar elementos a una lista de forma dinámica.
    - **Solución:** en este ejercicio, he creado una página web con un campo de entrada y un botón denominado ¨Áñadir a la lista¨, he 
    realizado un Script donde al hacer clic en el botón este recojera el contenido del campo de entrada el cuál se agrega como un nuevo item en la lista.
    -  A continuación se muestra un Gif con el resultado:
-![Foto Ejercicio 3](https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif%20(2).gif)
+![Foto Ejercicio 3](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF3.gif)
   ### ◽◾Ejercicio 4:
    - **Objetivo:** crear una página web el cuál contenga varios div, al posicionarse encima de ellos el fondo y la tipografía cambiará de color a azul y blanco respectivamente .
    - **Solución:** en este ejercicio he creado una página web con 4 div, los cuales tienen diferentes contenidos, con el uso de "mouseover" y "mouseout¨ he creado un script
    que va cambiando el color del fondo a azul al posicionarse encima de ellos junto a una tipografía de color blanco, al mover el ratón fuera de los respectivos div, estos
    volverán a su estado original:
-![Foto Ejercicio 4](https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif%20(3).gif)
+![Foto Ejercicio 4](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF4.gif)
   ### ◽◾Ejercicio 5:
-  - **Objetivo:** añadir a la página web proporcionada por el profesor un Script donde al realizar clic en cualquier elemento, se muestre una alerta con el XPath correspondiente.
+  - **Objetivo:** añadir a la página web proporcionada por el profesor un Script donde al realizar clic en cualquier elemento se muestre una alerta con el XPath correspondiente.
   - **Solución:** en este ejercicio, he añadido a la pagina web proprocionada del profesor un Script, el cual calcula el XPath de cualquier elemento al que se le haga clic devolviendo una alerta. (No se puede mostrar el XPath del botón Iframe debido a motivos de seguridad de Google):
   -  A continuación se muestra un Gif con el resultado:
-  ![Foto Ejercicio 5](https://github.com/JoseAntonioSegura/Imagenes/blob/5fa8aeee5005d6765f74945169da2937cb4989e2/Videos/ezgif.com-video-to-gif%20(4).gif)
+  ![Foto Ejercicio 5](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF5.gif)
