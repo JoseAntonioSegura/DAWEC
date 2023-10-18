@@ -68,4 +68,4 @@ Especificaciones:
   - **Objetivo:** añadir a la página web proporcionada por el profesor un Script donde al realizar clic en cualquier elemento se muestre una alerta con el XPath correspondiente.
   - **Solución:** en este ejercicio he añadido a la pagina web proprocionada del profesor un Script el cual calcula el XPath de cualquier elemento al que se le haga clic devolviendo una alerta. (No se puede mostrar el XPath del botón Iframe debido a motivos de seguridad de Google):
   -  A continuación se muestra un Gif con el resultado:
-  ![Foto Ejercicio 5](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF5.gif)
+  ![Foto Ejercicio 5](https://github.com/JoseAntonioSegura/Imagenes/blob/3398ec99b73a18f99aadf2cca76e1b5de96fd4df/Videos/Sprit2%20GIF5.gif)
