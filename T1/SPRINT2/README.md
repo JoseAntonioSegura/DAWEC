@@ -41,6 +41,7 @@ Especificaciones:
   - **Objetivo:** crear una página web que contenga un botón llamado ¨Cambiar color¨, al hacer clic en él el color del fondo de la página cambiará aleatoriamente.
    - **Solución:** en este ejercicio he creado un botón con su etiqueta correspondiente ¨Cambiar color¨, he creado un Script en el cuál genera un color aleatorio de fondo haciendo
    uso del ¨Math.random¨.
+![Excel Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio1.PNG)
    -  A continuación se muestra un Gif con el resultado:
   ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF1.gif)
   ### ◽◾Ejercicio 2:
@@ -48,7 +49,7 @@ Especificaciones:
    pulsar dicho botón deberá aparecer un parrafo donde se indique el calculo del area del rectángulo.
    - **Solución:** en este ejercicio he creado dos campos de entrada y posteriormente un botón denominado ¨Calcular Área¨, he creado un Script donde al pulsar el botón recoja
    los dos valores de entrada y los multiplique, devolviendo el area del rectángulo en un parrafo.
-   ![Excel Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio1.PNG)
+![Excel Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio2.PNG)
    -  A continuación se muestra un Gif con el resultado:
 ![Foto Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF2.gif)
 
@@ -56,6 +57,7 @@ Especificaciones:
    - **Objetivo:** crear una página web que contenga un campo de entrada y un botón que permita al usuario agregar elementos a una lista de forma dinámica.
    - **Solución:** en este ejercicio he creado una página web con un campo de entrada y un botón denominado ¨Áñadir a la lista¨,  he 
    realizado un Script donde al hacer clic en el botón este recojera el contenido del campo de entrada el cuál se agrega como un nuevo item en la lista.
+![Excel Ejercicio 3](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio3.PNG)
    -  A continuación se muestra un Gif con el resultado:
 ![Foto Ejercicio 3](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF3.gif)
   ### ◽◾Ejercicio 4:
@@ -63,10 +65,12 @@ Especificaciones:
    - **Solución:** en este ejercicio he creado una página web con 4 div los cuales tienen diferentes contenidos, con el uso de "mouseover" y "mouseout¨ he creado un script
    que va cambiando el color del fondo a azul al posicionarse encima de ellos junto a una tipografía de color blanco, al mover el ratón fuera de los respectivos div estos
    volverán a su estado original:
+![Excel Ejercicio 4](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio4.PNG)
    -  A continuación se muestra un Gif con el resultado:
 ![Foto Ejercicio 4](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF4.gif)
   ### ◽◾Ejercicio 5:
   - **Objetivo:** añadir a la página web proporcionada por el profesor un Script donde al realizar clic en cualquier elemento se muestre una alerta con el XPath correspondiente.
   - **Solución:** en este ejercicio he añadido a la pagina web proprocionada del profesor un Script el cual calcula el XPath de cualquier elemento al que se le haga clic devolviendo una alerta. (No se puede mostrar el XPath del botón Iframe debido a motivos de seguridad de Google):
+![Excel Ejercicio 5](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio5.PNG)
   -  A continuación se muestra un Gif con el resultado:
   ![Foto Ejercicio 5](https://github.com/JoseAntonioSegura/Imagenes/blob/3398ec99b73a18f99aadf2cca76e1b5de96fd4df/Videos/Sprit2%20GIF5.gif)
