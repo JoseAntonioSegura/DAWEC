@@ -48,8 +48,8 @@ Especificaciones:
    pulsar dicho botón deberá aparecer un parrafo donde se indique el calculo del area del rectángulo.
    - **Solución:** en este ejercicio he creado dos campos de entrada y posteriormente un botón denominado ¨Calcular Área¨, he creado un Script donde al pulsar el botón recoja
    los dos valores de entrada y los multiplique, devolviendo el area del rectángulo en un parrafo.
+   ![Excel Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio1.PNG)
    -  A continuación se muestra un Gif con el resultado:
-![Excel Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio1.PNG)
 ![Foto Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF2.gif)
 
   ### ◽◾Ejercicio 3:
