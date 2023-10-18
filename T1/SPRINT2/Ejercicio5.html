@@ -1,50 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Ejercicio 5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón e Iframe</title>
 </head>
+
 <body>
 
     <button id="mainButton">Botón Principal</button>
 
-    <iframe id="myIframe" width="200" height="200" frameborder="0" src="data:text/html;charset=utf-8, <!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Contenido Iframe</title></head><body><button id='iframeButton'>Botón Iframe</button></body></html>">
+    <iframe id="myIframe" width="200" height="200" frameborder="0" srcdoc="<!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Contenido Iframe</title>
+        </head>
+        <body>
+            <button id='iframeButton'>Botón Iframe</button>
+        </body>
+        </html>">
     </iframe>
 
     <script>
-        function getXPath(element) {
-            if (element.id !== "") {
-                return `id("${element.id}")`;
+        document.addEventListener('click', function(event) {
+            let clickedElement = event.target;
+            if (clickedElement.tagName === 'BUTTON') {
+                let xpath = getXPath(clickedElement);
+                alert(xpath);
             }
-
-            if (element === document.body) {
-                return element.tagName.toLowerCase();
-            }
-
-            const siblings = element.parentNode.children;
-            let index = 1;
-
-            for (let i = 0; i < siblings.length; i++) {
-                const sibling = siblings[i];
-
-                if (sibling === element) {
-                    return `${getXPath(element.parentNode)}/${element.tagName.toLowerCase()}[${index}]`;
-                }
-
-                if (sibling.nodeType === 1 && sibling.tagName === element.tagName) {
-                    index++;
-                }
-            }
-        }
-
-        function showAlertWithXPath(element) {
-            const xpath = getXPath(element);
-            alert(`XPath del elemento: ${xpath}`);
-        }
-
-        document.addEventListener("click", function(event) {
-            const clickedElement = event.target;
-            showAlertWithXPath(clickedElement);
         });
+
+        function getXPath(element) {
+            if (element.tagName === 'HTML') {
+                return '/HTML';
+            }
+            if (element === document.body) {
+                return '/HTML/BODY';
+            }
+
+            let path = getXPath(element.parentNode);
+            if (element.parentNode) {
+                let tag = element.tagName.toLowerCase();
+                let id = element.id ? ('[@id="' + element.id + '"]') : '';
+                path += '/' + tag + id;
+                let siblings = element.parentNode.children;
+                if (siblings.length > 1) {
+                    let index = 1;
+                    for (let i = 0; i < siblings.length; i++) {
+                        if (siblings[i] === element) {
+                            path += '[' + index + ']';
+                            break;
+                        }
+                        if (siblings[i].tagName === element.tagName) {
+                            index++;
+                        }
+                    }
+                }
+            }
+            return path;
+        }
+
+        window.onload = function () {
+            var iframe = document.getElementById('myIframe');
+            var iframeContent = iframe.contentDocument || iframe.contentWindow.document;
+            iframeContent.addEventListener('click', function(event) {
+                let clickedElement = event.target;
+                if (clickedElement.tagName === 'BUTTON') {
+                    let xpath = getXPath(clickedElement);
+                    alert(xpath);
+                }
+            });
+        };
     </script>
 </body>
+
 </html>
