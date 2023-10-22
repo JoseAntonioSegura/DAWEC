@@ -1,60 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ejercicio 5</title>
-</head>
-<body>
-
-    <button id="mainButton">Botón Principal</button>
-
-    <iframe id="myIframe" width="200" height="200" frameborder="0" src="data:text/html;charset=utf-8,<!DOCTYPE html>
-        <html lang='en'>
-        <head>
-            <meta charset='UTF-8'>
-            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>Contenido Iframe</title>
-        </head>
-        <body>
-            <button id='iframeButton'>Botón Iframe</button>
-        </body>
-        </html>">
-    </iframe>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón e Iframe</title>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtén el botón principal
+            const mainButton = document.getElementById('mainButton');
+            
+            // Agrega un evento 'click' al botón principal
+            mainButton.addEventListener('click', function () {
+                // Accede al iframe
+                const iframe = document.getElementById('myIframe');
+                
+                // Accede al documento dentro del iframe
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+                // Obtén el botón dentro del iframe
+                const iframeButton = iframeDocument.getElementById('iframeButton');
+
+                // Genera el XPath del botón dentro del iframe
+                const xpath = getXPath(iframeButton);
+
+                // Muestra el XPath en un cuadro de alerta
+                alert("XPath del botón dentro del iframe clickeado:\n\n" + xpath);
+            });
+        });
+
         function getXPath(element) {
             if (element.id !== "") {
+                // Si el elemento tiene un ID, se puede usar directamente en el XPath
                 return `id("${element.id}")`;
             }
 
-            if (element === document.body) {
-                return element.tagName.toLowerCase();
-            }
-
-            const siblings = element.parentNode.children;
-            let index = 1;
-
-            for (let i = 0; i < siblings.length; i++) {
-                const sibling = siblings[i];
-
-                if (sibling === element) {
-                    return `${getXPath(element.parentNode)}/${element.tagName.toLowerCase()}[${index}]`;
-                }
-
-                if (sibling.nodeType === 1 && sibling.tagName === element.tagName) {
-                    index++;
+            const idx = (sibling) => [].indexOf.call(sibling.parentNode.children, sibling) + 1;
+            const segs = [];
+            for (; element && element.nodeType == 1; element = element.parentNode) {
+                if (element.hasAttribute('id')) {
+                    segs.unshift(`id("${element.getAttribute('id')}")`);
+                    break;
+                } else if (element.parentNode) {
+                    segs.unshift(`${element.localName.toLowerCase()}[${idx(element)}]`);
+                } else {
+                    segs.unshift(element.localName.toLowerCase());
                 }
             }
+            return segs.join('/');
         }
-
-        function showAlertWithXPath(element) {
-            const xpath = getXPath(element);
-            alert(`XPath del elemento: ${xpath}`);
-        }
-
-        document.addEventListener("click", function(event) {
-            const clickedElement = event.target;
-            showAlertWithXPath(clickedElement);
-        });
     </script>
+</head>
+<body>
+    <button id="mainButton">Botón Principal</button>
+    
+    <iframe id="myIframe" width="200" height="200" frameborder="0" srcdoc="<!DOCTYPE html>
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Contenido Iframe</title>
+    </head>
+    <body>
+        <button id='iframeButton'>Botón Iframe</button>
+    </body>
+    </html>">
+    </iframe>
 </body>
 </html>
