@@ -1,6 +1,9 @@
 var PEPE = {a: 1, b: 2, c: 3, d: 4};
 var MANUEL = {b: 2, z: 3};
 
+console.log(PEPE);
+console.log(MANUEL);
+
 function fusionarObjetos(obj1, obj2) {
     var fusion = {};
     for (var propiedad in obj1) {

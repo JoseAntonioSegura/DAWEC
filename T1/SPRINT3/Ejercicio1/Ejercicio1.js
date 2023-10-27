@@ -16,5 +16,6 @@ function filtrarPropiedades(obj, propiedades) {
     }
     return nuevoObjeto;
 }
+var obj2 = filtrarPropiedades(entrada, propiedades)
 
-console.log(filtrarPropiedades(entrada, propiedades));
+console.log(obj2);

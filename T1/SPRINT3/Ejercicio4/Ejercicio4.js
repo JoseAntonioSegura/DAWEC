@@ -1,4 +1,5 @@
 var arr = ['pepe', 'manolo', 'paco', 'manuel'];
+console.log(arr);
 
 function cadenaMasLarga(arr) {
     let cadenaLarga = '';

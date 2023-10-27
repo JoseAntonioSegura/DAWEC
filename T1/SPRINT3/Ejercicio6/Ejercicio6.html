@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejercicio 6</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    select {
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Análisis y Transformación Avanzada de Datos</h1>
+  <h2>José Antonio Segura Gómez</h2>
+
+  <div class="btn-container">
+    <button id="btnDestacados">TOP 3 Estudiantes</button>
+    <label for="asignaturaInput2">Asignatura:</label>
+    <select id="asignaturaInput2">
+      <option value="matematicas">Matemáticas</option>
+      <option value="fisica">Física</option>
+      <option value="historia">Historia</option>
+    </select>
+
+    <button id="btnRendimiento">Asignatura de menor calificación</button>
+    <button id="btnMejorarNotas">Mejorar Notas</button>
+  </div>
+
+  <div class="input-container">
+    <button id="btnFiltrar">Filtrar estudiantes por ciudad y asignatura matemáticas</button>
+    <label for="asignaturaInput">Asignatura:</label>
+    <select id="asignaturaInput">
+      <option value="matematicas">Matemáticas</option>
+      <option value="fisica">Física</option>
+      <option value="historia">Historia</option>
+    </select>
+    <label for="ciudadInput">Ciudad:</label>
+    <input type="text" id="ciudadInput">
+  </div>
+
+  <div class="input-container">
+    <button id="btnSinBeca">Estudiantes sin beca en una ciudad</button>
+    <input type="text" id="ciudadInput2" placeholder="Ingrese una ciudad">
+    <button id="btnPromedioBeca">Promedio de edad de estudiantes con beca</button>
+    <button id="btnMejores">Mejores estudiantes en total</button>
+    <button id="btnAprobados">Estudiantes con todas las materias aprobadas</button>
+  </div>
+
+  <script src="Ejercicio6.js"></script>
+</body>
+</html>
