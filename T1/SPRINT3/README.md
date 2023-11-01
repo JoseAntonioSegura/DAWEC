@@ -10,7 +10,7 @@
  ###  4️⃣  Cadena más larga en un array:
 - Escribe una función que, dado un array de cadenas, devuelva la cadena más larga y su longitud.
  ###  5️⃣ Ordenamiento interactivo de tabla de personas:
-- Dada una tabla de personas con las columnas "Nombre", "Edad", "DNI", "Tiene/No tiene hijos" y "Fecha de nacimiento", escribe una función que permita ordenar la tabla por cualquiera de esas columnas. La columna "Fecha de nacimiento" debe tener el formato DD/MM/AAAA.
+- Dada una tabla de personas con las columnas **"Nombre", "Edad", "DNI", "Tiene/No tiene hijos" y "Fecha de nacimiento"**, escribe una función que permita ordenar la tabla por cualquiera de esas columnas. La columna "Fecha de nacimiento" debe tener el formato DD/MM/AAAA.
 - Puntos a tener en cuenta:
   - Se debe generar la tabla en HTML a partir del array de ejemplo pero con 20 filas en total (hay que añadir 15 más al ejemplo)
   - Al hacer un primer click sobre la clave de la columna, por ejemplo, Nombre, las filas se ordenaran de manera descendente (Z-A).
