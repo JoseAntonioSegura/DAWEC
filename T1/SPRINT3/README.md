@@ -26,11 +26,11 @@
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
   ### ◽◾Ejercicio 1:
 ![Excel Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio1.PNG)
-  -  A continuación se muestra un Gif con el resultado:
+   -  A continuación se muestra un Gif con el resultado:
   ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/cf95ceda7a9f4d14bee39951e47498dc5b7a06dc/Videos/Sprint3%20Ejercicio1.gif)
   ### ◽◾Ejercicio 2:
 ![Excel Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio2.PNG)
-  -  A continuación se muestra un Gif con el resultado:
+   -  A continuación se muestra un Gif con el resultado:
 ![Foto Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/cf95ceda7a9f4d14bee39951e47498dc5b7a06dc/Videos/Sprint3%20Ejercicio2.gif)
   ### ◽◾Ejercicio 3:
 ![Excel Ejercicio 3](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio3.PNG)
