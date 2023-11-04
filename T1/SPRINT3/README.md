@@ -85,7 +85,7 @@
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.5.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio65.gi)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio65.gif)
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.6.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
