@@ -1,4 +1,4 @@
-# Boletín Primero.
+# Boletín Tercero.
 ## 🔎Analisis del Problema.
 - Se pide realizar los siguientes ejercicios:
  ###  1️⃣ Filtrado de propiedades de un objeto:
