@@ -2,10 +2,67 @@
 <html>
 <head>
   <title>Ejercicio 2</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#pokemon-info {
+  text-align: center;
+}
+
+input, button {
+  margin-bottom: 10px;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 70%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+#comparison-results th {
+  background-color: #4CAF50;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+h1 {
+  color: #333;
+}
+
+  </style>
 </head>
 <body>
-  <h1>Transposición de matrices</h1>
+  <h1>Comparativa de Pokémon</h1>
   <h2>José Antonio Segura Gómez</h2>
+  <div id="pokemon-info">
+    <input type="text" id="pokemon1-input" placeholder="Nombre del primer Pokémon">
+    <input type="text" id="pokemon2-input" placeholder="Nombre del segundo Pokémon">
+    <button id="compare-button">Comparar Pokémon</button>
+    <div id="comparison-results"></div>
+  </div>
 </body>
 <script src="Ejercicio2.js"></script>
 </html>

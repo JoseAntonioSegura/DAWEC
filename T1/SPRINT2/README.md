@@ -42,7 +42,7 @@ Especificaciones:
    - **Solución:** en este ejercicio he creado un botón con su etiqueta correspondiente ¨Cambiar color¨, he creado un Script en el cuál genera un color aleatorio de fondo haciendo
    uso del ¨Math.random¨.
 ![Excel Ejercicio 2](https://github.com/JoseAntonioSegura/Imagenes/blob/b92cb08df197a28630d2b862cf8b4fdd912d571a/Sprint2%20Ejercicio1.PNG)
-   -  A continuación se muestra un Gif con el resultado:
+  -  A continuación se muestra un Gif con el resultado:
   ![Foto Ejercicio 1](https://github.com/JoseAntonioSegura/Imagenes/blob/faa32092f402161b88895e38adf38cd4bafa7d1f/Videos/Sprit2%20GIF1.gif)
   ### ◽◾Ejercicio 2:
    - **Objetivo:** crear una página web que contenga dos campos de entrada donde se introduzcan el ancho y alto de un rectángulo, junto con un botón llamado ¨Calcular Área¨, al 

@@ -1,11 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Ejercicio 4</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador de Películas</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input,
+    select,
+    button {
+      margin-bottom: 10px;
+      padding: 8px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #results-container {
+      /* Estilos para los resultados (puedes personalizar según tus necesidades) */
+    }
+
+    .movie {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .page-link {
+      padding: 8px 12px;
+      margin: 0 5px;
+      background-color: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .page-link:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <h1></h1>
-  <h2>José Antonio Segura Gómez</h2>
+  <div class="container">
+    <h1>Explorador de Películas</h1>
+
+    <form id="search-form">
+      <label for="search-input">Buscar Películas:</label>
+      <input type="text" id="search-input" placeholder="Ingrese palabras clave">
+
+      <label for="genre-select">Género:</label>
+      <select id="genre-select">
+        <option value="0"></option>
+        <option value="28">Acción</option>
+        <option value="12">Aventura</option>
+        <option value="16">Animación</option>
+        <option value="35">Comedia</option>
+        <option value="80">Crimen</option>
+        <option value="99">Documental</option>
+        <option value="18">Drama</option>
+        <option value="10751">Familia</option>
+        <option value="14">Fantasía</option>
+        <option value="36">Historia</option>
+        <option value="27">Terror</option>
+        <option value="10402">Música</option>
+        <option value="9648">Misterio</option>
+        <option value="10749">Romance</option>
+        <option value="878">Ciencia ficción</option>
+        <option value="10770">Cine TV</option>
+        <option value="53">Suspenso</option>
+        <option value="10752">Bélica</option>
+        <option value="37">Western</option>
+      </select>
+
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div id="results-container"></div>
+
+    <div class="pagination" id="pagination-container"></div>
+  </div>
+
+  <script src="Ejercicio4.js"></script>
 </body>
-<script src="Ejercicio4.js"></script>
 </html>

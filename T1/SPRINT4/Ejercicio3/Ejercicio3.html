@@ -2,10 +2,50 @@
 <html>
 <head>
   <title>Ejercicio 3</title>
+  <style>
+    /* Estilos para la presentación de la información */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #pokemon-info {
+      margin-top: 20px;
+    }
+
+    #evolution-chain {
+      margin: 20px auto;
+    }
+
+    #abilities-list {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Fusión de objetos sin duplicados</h1>
+  <h1></h1>
   <h2>José Antonio Segura Gómez</h2>
+  <div id="pokemon-info">
+    <label for="pokemon-input">Ingrese el nombre del Pokémon:</label>
+    <input type="text" id="pokemon-input" placeholder="Nombre del Pokémon">
+    <button id="search-button">Buscar Pokémon</button>
+    <div id="evolution-chain"></div>
+    <div id="abilities-list"></div>
+  </div>
 </body>
 <script src="Ejercicio3.js"></script>
 </html>

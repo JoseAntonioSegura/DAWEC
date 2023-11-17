@@ -1,20 +1,111 @@
-var PEPE = {a: 1, b: 2, c: 3, d: 4};
-var MANUEL = {b: 2, z: 3};
+document.addEventListener("DOMContentLoaded", function () {
+  const searchButton = document.getElementById("search-button");
+  const pokemonInput = document.getElementById("pokemon-input");
+  const evolutionChainDiv = document.getElementById("evolution-chain");
+  const abilitiesListDiv = document.getElementById("abilities-list");
 
-console.log(PEPE);
-console.log(MANUEL);
+  searchButton.addEventListener("click", function () {
+    const pokemonName = pokemonInput.value.toLowerCase();
+    getPokemonData(pokemonName);
+  });
 
-function fusionarObjetos(obj1, obj2) {
-    var fusion = {};
-    for (var propiedad in obj1) {
-        fusion[propiedad] = obj1[propiedad];
+  async function getPokemonData(pokemonName) {
+    try {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+      const data = await response.json();
+      const evolutionChainData = await getEvolutionChain(data.species.url);
+      displayPokemonInfo(data, evolutionChainData, pokemonName);
+    } catch (error) {
+      console.error("Error fetching Pokemon data:", error);
+      // Limpiar la información en caso de error
+      evolutionChainDiv.innerHTML = "";
+      abilitiesListDiv.innerHTML = "";
     }
-    for (var propiedad in obj2) {
-        fusion[propiedad] = obj2[propiedad];
+  }
+
+  async function getEvolutionChain(speciesUrl) {
+    try {
+      const response = await fetch(speciesUrl);
+      const data = await response.json();
+      const evolutionChainUrl = data.evolution_chain.url;
+      const evolutionChainResponse = await fetch(evolutionChainUrl);
+      const evolutionChainData = await evolutionChainResponse.json();
+      return evolutionChainData;
+    } catch (error) {
+      console.error("Error fetching evolution chain data:", error);
+      return null;
     }
-    return fusion;
-}
+  }
 
-var PEPEMANUEL = fusionarObjetos(PEPE, MANUEL);
+  async function getAbilityDetails(abilityUrl) {
+    try {
+      const response = await fetch(abilityUrl);
+      const data = await response.json();
+      return data.effect_entries[0].effect; // Cambia esto según la estructura de tu API
+    } catch (error) {
+      console.error("Error fetching ability details:", error);
+      return null;
+    }
+  }
 
-console.log(PEPEMANUEL);
+  async function displayPokemonInfo(pokemonData, evolutionChainData, selectedPhase) {
+    // Limpiar la información anterior
+    evolutionChainDiv.innerHTML = "";
+    abilitiesListDiv.innerHTML = "";
+
+    // Mostrar el nombre del Pokémon
+    document.querySelector("h1").textContent = `Información de ${pokemonData.name}`;
+
+    // Verificar si tiene evoluciones
+    if (evolutionChainData && evolutionChainData.chain && evolutionChainData.chain.species) {
+      // Mostrar toda la cadena de evolución
+      const evolutionTitle = document.createElement("h3");
+      evolutionTitle.textContent = "Cadena de Evolución:";
+      evolutionChainDiv.appendChild(evolutionTitle);
+
+      const evolutionChain = [evolutionChainData.chain.species.name];
+
+      function traverseEvolutionChain(evolutionData) {
+        if (evolutionData.evolves_to && evolutionData.evolves_to.length > 0) {
+          evolutionData.evolves_to.forEach((evolution) => {
+            evolutionChain.push(evolution.species.name);
+            traverseEvolutionChain(evolution);
+          });
+        }
+      }
+
+      traverseEvolutionChain(evolutionChainData.chain);
+
+      evolutionChain.forEach((evolution) => {
+        const evolutionItem = document.createElement("p");
+        evolutionItem.textContent = evolution;
+        evolutionChainDiv.appendChild(evolutionItem);
+      });
+    } else {
+      evolutionChainDiv.innerHTML = "<p>No tiene evoluciones.</p>";
+    }
+
+    // Mostrar habilidades
+    const abilitiesTitle = document.createElement("h3");
+    abilitiesTitle.textContent = "Habilidades:";
+    abilitiesListDiv.appendChild(abilitiesTitle);
+
+    for (const ability of pokemonData.abilities) {
+      const abilityItem = document.createElement("p");
+      const detailsButton = document.createElement("button");
+
+      // Obtener detalles de la habilidad
+      const abilityDetails = await getAbilityDetails(ability.ability.url);
+
+      abilityItem.textContent = ability.ability.name;
+      detailsButton.textContent = "Ver Detalles";
+
+      detailsButton.addEventListener("click", function () {
+        alert(`Detalles de la habilidad ${ability.ability.name}: ${abilityDetails}`);
+      });
+
+      abilityItem.appendChild(detailsButton);
+      abilitiesListDiv.appendChild(abilityItem);
+    }
+  }
+});
