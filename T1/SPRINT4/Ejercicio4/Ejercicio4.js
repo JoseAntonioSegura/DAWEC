@@ -39,17 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         resultsContainer.appendChild(loadMoreButton);
                     }
                 }
-
-                // Ejemplo de cómo agregar películas a la lista de favoritos
-                data.results.forEach(movie => {
-                    if (favoritesList.some(favorite => favorite.id === movie.id)) {
-                        movie.isFavorite = true;
-                    } else {
-                        movie.isFavorite = false;
-                    }
-                });
-
-                displayResults(data.results);
             })
             .catch(error => console.error("Error fetching data:", error));
     }
@@ -85,18 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 movieElement.appendChild(img);
             }
 
-            // Agregar botón "Agregar a favoritos" o "Eliminar de favoritos"
-            const favoriteButton = document.createElement("button");
-            favoriteButton.textContent = movie.isFavorite ? "Eliminar de favoritos" : "Agregar a favoritos";
-            favoriteButton.classList.add("add-to-favorites");
-            favoriteButton.dataset.movieId = movie.id;
-            favoriteButton.addEventListener("click", () => toggleFavorite(movie));
-
             movieElement.appendChild(title);
             movieElement.appendChild(releaseYear);
             movieElement.appendChild(overview);
             movieElement.appendChild(rating);
-            movieElement.appendChild(favoriteButton);
 
             resultsContainer.appendChild(movieElement);
         });
@@ -119,73 +100,16 @@ document.addEventListener("DOMContentLoaded", function () {
         searchMovies(query, genre, page);
     }
 
-    // Función para agregar o eliminar una película de la lista de favoritos
-    function toggleFavorite(movie) {
-        if (favoritesList.some(favorite => favorite.id === movie.id)) {
-            removeFromFavorites(movie.id);
-        } else {
-            addToFavorites(movie);
-        }
-    }
-
     // Función para agregar una película a la lista de favoritos
     function addToFavorites(movie) {
         favoritesList.push(movie);
         updateResults();
-        addMovieToList(movie.id); // Llamada a la función para agregar a la lista en TMDb
     }
 
     // Función para eliminar una película de la lista de favoritos
     function removeFromFavorites(movieId) {
         favoritesList = favoritesList.filter(movie => movie.id !== movieId);
         updateResults();
-        removeMovieFromList(movieId); // Llamada a la función para eliminar de la lista en TMDb
-    }
-
-    // Función para agregar una película a la lista en TMDb
-    function addMovieToList(movieId) {
-        const listId = YOUR_LIST_ID; // Reemplaza con el ID de tu lista en TMDb
-        const session_id = "TU_SESSION_ID"; // Reemplaza con tu session_id
-
-        const addURL = `${baseURL}/list/${listId}/add_item?${apiKeyQueryParam}&session_id=${session_id}`;
-
-        const requestBody = {
-            media_id: movieId,
-        };
-
-        fetch(addURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(requestBody),
-        })
-            .then(response => response.json())
-            .then(data => console.log("Movie added to list:", data))
-            .catch(error => console.error("Error adding movie to list:", error));
-    }
-
-    // Función para eliminar una película de la lista en TMDb
-    function removeMovieFromList(movieId) {
-        const listId = YOUR_LIST_ID; // Reemplaza con el ID de tu lista en TMDb
-        const session_id = "TU_SESSION_ID"; // Reemplaza con tu session_id
-
-        const removeURL = `${baseURL}/list/${listId}/remove_item?${apiKeyQueryParam}&session_id=${session_id}`;
-
-        const requestBody = {
-            media_id: movieId,
-        };
-
-        fetch(removeURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(requestBody),
-        })
-            .then(response => response.json())
-            .then(data => console.log("Movie removed from list:", data))
-            .catch(error => console.error("Error removing movie from list:", error));
     }
 
     // Función para actualizar los resultados después de agregar o eliminar de favoritos
