@@ -76,11 +76,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       traverseEvolutionChain(evolutionChainData.chain);
 
-      evolutionChain.forEach((evolution) => {
-        const evolutionItem = document.createElement("p");
-        evolutionItem.textContent = evolution;
+      for (const pokemonName of evolutionChain) {
+        const pokemonImage = await getPokemonImage(pokemonName);
+        const evolutionItem = document.createElement("div");
+        evolutionItem.innerHTML = `<p>${pokemonName}</p><img src="${pokemonImage}" alt="${pokemonName}" class="pokemon-image">`;
         evolutionChainDiv.appendChild(evolutionItem);
-      });
+      }
     } else {
       evolutionChainDiv.innerHTML = "<p>No tiene evoluciones.</p>";
     }
@@ -106,6 +107,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       abilityItem.appendChild(detailsButton);
       abilitiesListDiv.appendChild(abilityItem);
+    }
+  }
+
+  async function getPokemonImage(pokemonName) {
+    try {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
+      const data = await response.json();
+      return data.sprites.front_default;
+    } catch (error) {
+      console.error("Error fetching Pokemon image:", error);
+      return null;
     }
   }
 });

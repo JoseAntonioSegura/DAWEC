@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultsContainer = document.getElementById("results-container");
     const apiKeyQueryParam = `api_key=${apiKey}`;
     let favoritesList = [];
+    let listId = 8279791; 
     let currentPage = 1;
     let session_id; // Variable global para almacenar la session_id
 
@@ -79,42 +80,50 @@ document.addEventListener("DOMContentLoaded", function () {
             resultsContainer.innerHTML = "No se encontraron resultados.";
             return;
         }
-
+    
         results.forEach(movie => {
             const movieElement = document.createElement("div");
             movieElement.classList.add("movie");
-
+    
             const title = document.createElement("h3");
             title.textContent = movie.title;
-
+    
             const releaseYear = document.createElement("p");
             releaseYear.textContent = `Año de lanzamiento: ${movie.release_date.split("-")[0]}`;
-
+    
             const overview = document.createElement("p");
             overview.textContent = movie.overview;
-
+    
             const rating = document.createElement("p");
             rating.textContent = `Puntuación: ${movie.vote_average}`;
-
+    
             if (movie.poster_path) {
                 const img = document.createElement("img");
                 img.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
                 img.alt = `${movie.title} Poster`;
                 movieElement.appendChild(img);
             }
-
+    
             const favoriteButton = document.createElement("button");
-            favoriteButton.textContent = movie.isFavorite ? "Eliminar de favoritos" : "Agregar a favoritos";
             favoriteButton.classList.add("add-to-favorites");
             favoriteButton.dataset.movieId = movie.id;
             favoriteButton.addEventListener("click", () => toggleFavorite(movie));
-
+    
+            // Verifica si la película está en la lista de favoritos
+            if (favoritesList.some(favorite => favorite.id === movie.id)) {
+                favoriteButton.textContent = "Eliminar de favoritos";
+                favoriteButton.style.backgroundColor = "red"; // Cambiar el color de fondo a rojo
+            } else {
+                favoriteButton.textContent = "Agregar a favoritos";
+                favoriteButton.style.backgroundColor = ""; // Restablecer el color de fondo
+            }
+    
             movieElement.appendChild(title);
             movieElement.appendChild(releaseYear);
             movieElement.appendChild(overview);
             movieElement.appendChild(rating);
             movieElement.appendChild(favoriteButton);
-
+    
             resultsContainer.appendChild(movieElement);
         });
     }
@@ -134,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
         searchMovies(query, genre, page);
     }
     
-    
     function toggleFavorite(movie) {
         if (favoritesList.some(favorite => favorite.id === movie.id)) {
             removeFromFavorites(movie.id);
@@ -142,31 +150,78 @@ document.addEventListener("DOMContentLoaded", function () {
             addToFavorites(movie);
         }
     }
-
+    
     function addToFavorites(movie) {
-        favoritesList.push(movie);
-        updateResults();
-        addMovieToList(movie.id);
+        // Verifica si la película ya está en la lista
+        if (!favoritesList.some(favorite => favorite.id === movie.id)) {
+            addMovieToList(movie.id)
+                .then(() => {
+                    favoritesList.push(movie);
+                    updateResults();
+                })
+                .catch(error => console.error("Error adding movie to list:", error));
+        } else {
+            console.log("La película ya está en la lista de favoritos.");
+        }
     }
-
+    
     function removeFromFavorites(movieId) {
-        favoritesList = favoritesList.filter(movie => movie.id !== movieId);
-        updateResults();
-        removeMovieFromList(movieId);
+        // Verifica si la película está en la lista antes de intentar eliminarla
+        if (favoritesList.some(favorite => favorite.id === movieId)) {
+            removeMovieFromList(movieId)
+                .then(() => {
+                    favoritesList = favoritesList.filter(movie => movie.id !== movieId);
+                    updateResults();
+                })
+                .catch(error => console.error("Error removing movie from list:", error));
+        } else {
+            console.log("La película no está en la lista de favoritos.");
+        }
     }
-
+    
+    function addMovieToList(movieId) {
+        const listId = 8279791;
+        const addURL = `${baseURL}/list/${listId}/add_item?${apiKeyQueryParam}&session_id=${session_id}`;
+    
+        const requestBody = {
+            media_id: movieId,
+        };
+    
+        return fetch(addURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Movie added to list:", data);
+            })
+            .catch(error => {
+                console.error("Error adding movie to list:", error);
+                throw error; // Propaga el error para que pueda ser capturado por la promesa externa
+            });
+    }
+    
     function removeMovieFromList(movieId) {
+        const listId = 8279791;
         const removeURL = `${baseURL}/list/${listId}/remove_item?${apiKeyQueryParam}&session_id=${session_id}`;
         const requestBody = { media_id: movieId };
-
-        fetch(removeURL, {
+    
+        return fetch(removeURL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(requestBody),
         })
             .then(response => response.json())
-            .then(data => console.log("Movie removed from list:", data))
-            .catch(error => console.error("Error removing movie from list:", error));
+            .then(data => {
+                console.log("Movie removed from list:", data);
+            })
+            .catch(error => {
+                console.error("Error removing movie from list:", error);
+                throw error; // Propaga el error para que pueda ser capturado por la promesa externa
+            });
     }
 
     function updateResults() {

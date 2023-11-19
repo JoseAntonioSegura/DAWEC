@@ -1,17 +1,148 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Ejercicio 1</title>
+  <style>
+    body {
+      font-family: 'Press Start 2P', cursive;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: url(https://images.alphacoders.com/581/581224.jpg) no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    h1{
+      color: #ffffff;
+      -webkit-text-stroke: 2px #000000;
+    }
+    h2 {
+      color: #ffffff;
+      -webkit-text-stroke: 1px #000000;
+    }
+
+    #pokemon-info {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      margin: 20px auto;
+    }
+
+    #id,
+    #types {
+      color: #fff; /* Cambié el color del texto a blanco para contrastar con el fondo */
+    }
+
+    #pokemon-image {
+      max-width: 200px; /* Ajusté el ancho máximo de la imagen */
+      max-height: 200px; /* Ajusté la altura máxima de la imagen */
+    }
+
+        /* Agregando estilos para cada tipo de Pokémon */
+        .type-normal {
+      color: #a8a878; /* Gris */
+    }
+
+    .type-fire {
+      color: #f08030; /* Rojo */
+    }
+
+    .type-water {
+      color: #6890f0; /* Azul */
+    }
+
+    .type-grass {
+      color: #78c850; /* Verde */
+    }
+
+    .type-electric {
+      color: #f8d030; /* Amarillo */
+    }
+
+    .type-ice {
+      color: #98d8d8; /* Cyan */
+    }
+
+    .type-fighting {
+      color: #c03028; /* Naranja */
+    }
+
+    .type-poison {
+      color: #a040a0; /* Púrpura */
+    }
+
+    .type-ground {
+      color: #e0c068; /* Marrón */
+    }
+
+    .type-flying {
+      color: #a890f0; /* Celeste */
+    }
+
+    .type-psychic {
+      color: #f85888; /* Rosa */
+    }
+
+    .type-bug {
+      color: #a8b820; /* Verde Oliva */
+    }
+
+    .type-rock {
+      color: #b8a038; /* Marrón Claro */
+    }
+
+    .type-ghost {
+      color: #705898; /* Púrpura Oscuro */
+    }
+
+    .type-dragon {
+      color: #7038f8; /* Azul Oscuro */
+    }
+
+    .type-dark {
+      color: #705848; /* Gris Oscuro */
+    }
+
+    .type-steel {
+      color: #b8b8d0; /* Gris Metálico */
+    }
+
+    .type-fairy {
+      color: #ee99ac; /* Rosa Claro */
+    }
+
+    input, button {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 2px solid #ff3f3f;
+      border-radius: 5px;
+  }
+
+  button {
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+  }
+  </style>
 </head>
+
 <body>
-  <h1></h1>
-  <h2>José Antonio Segura Gómez</h2>
-  <div id="pokemon-info">
-    <h1 id="name"></h1>
-    <p id="id"></p>
-    <p id="types"></p>
-    <img id="pokemon-image" src="" alt="Pokemon Image">
-  </div>
+  <body>
+    <h1>información básica del Pokémon</h1>
+    <h2>José Antonio Segura Gómez</h2>
+    <div id="pokemon-info">
+      <input type="text" id="pokemon-input" placeholder="Nombre del Pokémon">
+      <button id="search-button">Buscar Pokémon</button>
+      <h1 id="name"></h1>
+      <p id="id"></p>
+      <p id="types"></p>
+      <img id="pokemon-image" src="" >
+    </div>
+    <script src="Ejercicio1.js"></script>
+
 </body>
-<script src="Ejercicio1.js"></script>
 </html>
