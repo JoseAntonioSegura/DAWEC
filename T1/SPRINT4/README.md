@@ -1,27 +1,30 @@
-# Boletín Tercero.
+# Boletín Cuarto.
 ## 🔎Analisis del Problema.
 - Se pide realizar los siguientes ejercicios:
- ###  1️⃣ Filtrado de propiedades de un objeto:
-- Dado un objeto y una lista de propiedades, escribe una función que devuelva un nuevo objeto solo con las propiedades indicadas.
- ###  2️⃣ Transposición de matrices: 
-- Dada una matriz, escribe una función que devuelva la transposición de esa matriz.
- ### 3️⃣ Fusión de objetos sin duplicados:
-- Dado dos objetos, escribe una función que los fusiona en uno solo. Si hay propiedades repetidas, conserva el valor del segundo objeto.
- ###  4️⃣  Cadena más larga en un array:
-- Escribe una función que, dado un array de cadenas, **devuelva la cadena más larga y su longitud**.
- ###  5️⃣ Ordenamiento interactivo de tabla de personas:
-- Dada una tabla de personas con las columnas **"Nombre", "Edad", "DNI", "Tiene/No tiene hijos" y "Fecha de nacimiento"**, escribe una función que permita ordenar la tabla por cualquiera de esas columnas. **La columna "Fecha de nacimiento" debe tener el formato **DD/MM/AAAA**.
-- Puntos a tener en cuenta:
-  - Se debe generar la tabla en HTML a partir del array de ejemplo pero con 20 filas en total (hay que añadir 15 más al ejemplo)
-  - Al hacer un primer click sobre la clave de la columna, por ejemplo, Nombre, las filas se ordenaran de manera descendente (Z-A).
-  - Al hacer un segundo click sobre la clave de la columna, por ejemplo, Nombre, las filas se ordenaran de manera ascendente (A-Z).
-  - Debe mantener la relación de las filas, es decir, no se ordena sólo la columna, sino la fila completa.
-###  6️⃣ Análisis y Transformación Avanzada de Datos:
-- Dado un conjunto de datos en forma de array con información sobre estudiantes, sus calificaciones en diferentes asignaturas y detalles adicionales, implementa funciones para analizar, filtrar y transformar estos datos.
+ ###  1️⃣ Información Básica del Pokémon:
+- Realizar una petición a la PokeAPI para obtener información básica de un Pokémon por su nombre.
+- Mostrar el nombre, id, tipos, y una imagen del Pokémon.
+- Gestionar errores de manera adecuada si el Pokémon no existe.
+- Dos pruebas, una sin error probando dos búsquedas y otra con error
+ ###  2️⃣ Comparativa de Pokémon: 
+- Obtener datos de dos Pokémon elegidos por el usuario.
+- Comparar sus estadísticas base (stats) y determinar cuál de ellos tiene mejores estadísticas generales.
+- Presentar los resultados en una tabla comparativa de fácil lectura.
+- Dos pruebas sin error.
+ ### 3️⃣ Evoluciones y Habilidades:
+- Dado un Pokémon específico, buscar su cadena de evolución completa.
+- Listar cada una de las formas evolutivas y sus habilidades.
+- Incluir un botón que permita al usuario ver más detalles de cualquier habilidad (usando un modal o una nueva vista).
+ ###  4️⃣ Explorador de Películas:
+- **Objetivo:** Crear una aplicación web que permita a los usuarios explorar películas basándose en diferentes criterios como género. Usar la API The Movie DB (TMDB API)
+- **Interfaz de Búsqueda:** Desarrollar una interfaz de usuario donde los usuarios puedan ingresar palabras clave o seleccionar filtros para buscar películas por género.
+- **Mostrar Resultados:** Presentar los resultados de la búsqueda en un formato amigable para el usuario, mostrando detalles como el título de la película, año de lanzamiento, resumen y puntuación.
+- **Paginación de Resultados:** Implementar la paginación para los resultados para que los usuarios puedan navegar a través de múltiples páginas de resultados.
+ ###  5️⃣ Películas favoritas:
+- Objetivo: Añadir al ejercicio 4 que se puedan añadir/eliminar las película a una lista de favoritos.
 
-- *Realizaremos los ejercicios según las indicaciones del profesor con ayuda del video y la teoría además del uso de herramientas como ChatGPT entre otros.*
 ## ✍Diseño de la solución.
-- Para realizar este apartado de la Tarea de Boletín/Sprint 3, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
+- Para realizar este apartado de la Tarea de Boletín/Sprint 4, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
 ## 🧾Pruebas.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
   ### ◽◾Ejercicio 1:
@@ -49,54 +52,3 @@
   -  A continuación se muestra un Gif con el resultado:
 
 ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/c957a0e7b5af1fd70ce7656f2593d4219e8f5ba5/Videos/Sprint3%20Ejercicio5.1.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio5.2.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/c957a0e7b5af1fd70ce7656f2593d4219e8f5ba5/Videos/Sprint3%20Ejercicio5.2.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio5.3.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/c957a0e7b5af1fd70ce7656f2593d4219e8f5ba5/Videos/Sprint3%20Ejercicio5.3.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio5.4.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/c957a0e7b5af1fd70ce7656f2593d4219e8f5ba5/Videos/Sprint3%20Ejercicio5.4.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio5.5.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/c957a0e7b5af1fd70ce7656f2593d4219e8f5ba5/Videos/Sprint3%20Ejercicio5.5.gif)
-  ### ◽◾Ejercicio 6:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.1.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio61.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.2.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio62.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.3.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio63.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.4.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio64.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.5.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio65.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.6.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio66.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.7.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio67.gif)
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/eae6903e14a21b1202b97038fed228ea5d9cb195/Sprint3%20Ejercicio6.8.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-  ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/e000731eee77017d45e59e3542a8eecff7edf944/Videos/Sprint3%20Ejercicio68.gif)
-
-
