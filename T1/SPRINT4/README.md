@@ -5,12 +5,10 @@
 - Realizar una petición a la PokeAPI para obtener información básica de un Pokémon por su nombre.
 - Mostrar el nombre, id, tipos, y una imagen del Pokémon.
 - Gestionar errores de manera adecuada si el Pokémon no existe.
-- Dos pruebas, una sin error probando dos búsquedas y otra con error
  ###  2️⃣ Comparativa de Pokémon: 
 - Obtener datos de dos Pokémon elegidos por el usuario.
 - Comparar sus estadísticas base (stats) y determinar cuál de ellos tiene mejores estadísticas generales.
 - Presentar los resultados en una tabla comparativa de fácil lectura.
-- Dos pruebas sin error.
  ### 3️⃣ Evoluciones y Habilidades:
 - Dado un Pokémon específico, buscar su cadena de evolución completa.
 - Listar cada una de las formas evolutivas y sus habilidades.
