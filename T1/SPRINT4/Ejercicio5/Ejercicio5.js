@@ -107,6 +107,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const removeButton = document.createElement("button");
         removeButton.textContent = "Eliminar de favoritos";
         removeButton.style.backgroundColor = "red";
+        removeButton.style.position = "absolute";
+        removeButton.style.bottom = "0px";
+        removeButton.style.right = "20px";
         removeButton.addEventListener("click", () => removeFromFavorites(movie.id));
 
         movieElement.appendChild(title);
