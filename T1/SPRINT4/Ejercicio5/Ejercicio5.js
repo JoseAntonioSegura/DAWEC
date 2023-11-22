@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let listId = 8279791; 
     let currentPage = 1;
     let session_id; // Variable global para almacenar la session_id
+    let loadMoreButton;
 
     function authenticateUser(apiKey) {
         const requestTokenURL = `${baseURL}/authentication/token/new?${apiKeyQueryParam}`;
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 session_id = data.session_id;
                 console.log("session_id:", session_id);
+                getFavoriteMovies();
             })
             .catch(error => console.error("Error obteniendo el código de solicitud:", error));
     }
@@ -54,15 +56,81 @@ document.addEventListener("DOMContentLoaded", function () {
     // Llamada a la función para autenticar al usuario
     authenticateUser(apiKey);
 
+    
+    // Obtén y muestra las películas favoritas al cargar la página
+    function getFavoriteMovies() {
+        const getFavoritesURL = `${baseURL}/list/${listId}?${apiKeyQueryParam}&session_id=${session_id}`;
+    
+        fetch(getFavoritesURL)
+            .then(response => response.json())
+            .then(data => {
+                favoritesList = [...new Set(data.items)]; // Filtrar duplicados
+                displayFavoriteMovies();
+            })
+            .catch(error => console.error("Error fetching favorite movies:", error));
+    }
+    
+
+    // Muestra las películas favoritas en el elemento "favorite-list"
+    function displayFavoriteMovies() {
+    const favoriteListContainer = document.getElementById("favorite-list");
+    favoriteListContainer.innerHTML = ""; // Limpiar el contenido existente
+
+    if (favoritesList.length === 0) {
+        favoriteListContainer.innerHTML = "No hay películas favoritas.";
+        return;
+    }
+
+    favoritesList.forEach(movie => {
+        const movieElement = document.createElement("div");
+        movieElement.classList.add("pelicula");
+
+        const title = document.createElement("h3");
+        title.textContent = movie.original_title;
+
+        const releaseYear = document.createElement("p");
+        releaseYear.textContent = `Año de lanzamiento: ${movie.release_date.split("-")[0]}`;
+
+        const overview = document.createElement("p");
+        overview.textContent = movie.overview;
+
+        const rating = document.createElement("p");
+        rating.textContent = `Puntuación: ${movie.vote_average}`;
+
+        if (movie.poster_path) {
+            const img = document.createElement("img");
+            img.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+            img.alt = `${movie.title} Poster`;
+            movieElement.appendChild(img);
+        }
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Eliminar de favoritos";
+        removeButton.style.backgroundColor = "red";
+        removeButton.addEventListener("click", () => removeFromFavorites(movie.id));
+
+        movieElement.appendChild(title);
+        movieElement.appendChild(releaseYear);
+        movieElement.appendChild(overview);
+        movieElement.appendChild(rating);
+        movieElement.appendChild(removeButton);
+
+        favoriteListContainer.appendChild(movieElement);
+    });
+}
+
+
+    // Llama a la función para obtener y mostrar las películas favoritas al cargar la página
+    getFavoriteMovies();
+    
     function addMovieToList(movieId) {
         const listId = 8279791;
-
         const addURL = `${baseURL}/list/${listId}/add_item?${apiKeyQueryParam}&session_id=${session_id}`;
-
+    
         const requestBody = {
             media_id: movieId,
         };
-
+    
         fetch(addURL, {
             method: 'POST',
             headers: {
@@ -71,10 +139,15 @@ document.addEventListener("DOMContentLoaded", function () {
             body: JSON.stringify(requestBody),
         })
             .then(response => response.json())
-            .then(data => console.log("Movie added to list:", data))
-            .catch(error => console.error("Error adding movie to list:", error));
+            .then(data => {
+                console.log("Movie added to list:", data);
+            })
+            .catch(error => {
+                console.error("Error adding movie to list:", error);
+                throw error; // Propaga el error para que pueda ser capturado por la promesa externa
+            });
     }
-
+    
     function displayResults(results) {
         if (results.length === 0) {
             resultsContainer.innerHTML = "No se encontraron resultados.";
@@ -129,14 +202,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function createLoadMoreButton(query, genre, page) {
-        const loadMoreButton = document.createElement("button");
+        loadMoreButton = document.createElement("button"); // Asignar la referencia al botón global
         loadMoreButton.textContent = "Cargar más";
         loadMoreButton.addEventListener("click", () => loadMoreResults(query, genre, page));
         return loadMoreButton;
     }
 
-      function loadMoreResults(query, genre, page) {
-        const loadMoreButton = document.querySelector("#results-container button");
+    function loadMoreResults(query, genre, page) {
         if (loadMoreButton) {
             loadMoreButton.remove(); // Eliminar el botón "Cargar más" anterior
         }
@@ -152,32 +224,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     function addToFavorites(movie) {
-        // Verifica si la película ya está en la lista
-        if (!favoritesList.some(favorite => favorite.id === movie.id)) {
-            addMovieToList(movie.id)
-                .then(() => {
-                    favoritesList.push(movie);
-                    updateResults();
-                })
-                .catch(error => console.error("Error adding movie to list:", error));
+        if (session_id) {
+            if (!favoritesList.some(favorite => favorite.id === movie.id)) {
+                addMovieToList(movie.id)
+                    .then(() => {
+                        favoritesList.push(movie);
+                        updateResults();
+                        getFavoriteMovies(); // Actualizar la lista de favoritos
+                    })
+                    .catch(error => console.error("Error adding movie to list:", error));
+            } else {
+                console.log("La película ya está en la lista de favoritos.");
+            }
         } else {
-            console.log("La película ya está en la lista de favoritos.");
+            console.log("Usuario no autenticado.");
         }
     }
     
     function removeFromFavorites(movieId) {
-        // Verifica si la película está en la lista antes de intentar eliminarla
-        if (favoritesList.some(favorite => favorite.id === movieId)) {
-            removeMovieFromList(movieId)
-                .then(() => {
-                    favoritesList = favoritesList.filter(movie => movie.id !== movieId);
-                    updateResults();
-                })
-                .catch(error => console.error("Error removing movie from list:", error));
+        if (session_id) {
+            if (favoritesList.some(favorite => favorite.id === movieId)) {
+                removeMovieFromList(movieId)
+                    .then(() => {
+                        favoritesList = favoritesList.filter(movie => movie.id !== movieId);
+                        updateResults();
+                        getFavoriteMovies(); // Actualizar la lista de favoritos
+                    })
+                    .catch(error => console.error("Error removing movie from list:", error));
+            } else {
+                console.log("La película no está en la lista de favoritos.");
+            }
         } else {
-            console.log("La película no está en la lista de favoritos.");
+            console.log("Usuario no autenticado.");
         }
     }
+    
+    
     
     function addMovieToList(movieId) {
         const listId = 8279791;
