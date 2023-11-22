@@ -25,8 +25,8 @@
 - Para realizar este apartado de la Tarea de Boletín/Sprint 4, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
 ## 🧾Pruebas.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
-  ### ◽◾Ejercicio 1:
-  #### Prueba 1:
+### ◽◾Ejercicio 1:
+#### Prueba 1:
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Sprint4%20Ejercicio1.0.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
@@ -68,7 +68,7 @@
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Sprint4%20Ejercicio4.1.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Videos/Sprint%204%20video9.gif)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Videos/Sprint%204%20video8.gif)
   ### ◽◾Ejercicio 5:
   #### Prueba 1:
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Sprint4%20Ejercicio5.0.PNG)
