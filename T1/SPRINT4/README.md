@@ -29,10 +29,12 @@
   ## Prueba 1:
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Sprint4%20Ejercicio1.0.PNG)
   -  A continuación se muestra un Gif con el resultado:
+
 ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Videos/Sprint%204%20video1.gif)
   ## Prueba 2:
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Sprint4%20Ejercicio1.1.PNG)
   -  A continuación se muestra un Gif con el resultado:
+
 ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Videos/Sprint%204%20video2.gif)
   ### ◽◾Ejercicio 2:
   ## Prueba 1:
