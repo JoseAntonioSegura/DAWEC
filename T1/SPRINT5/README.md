@@ -2,13 +2,9 @@
 ## 🔎Analisis del Problema.
 - Se pide realizar los siguientes ejercicios:
  ###  1️⃣ Diferencias entre TypeSript y JavaScrit:
-- Realizar una petición a la PokeAPI para obtener información básica de un Pokémon por su nombre.
-- Mostrar el nombre, id, tipos, y una imagen del Pokémon.
-- Gestionar errores de manera adecuada si el Pokémon no existe.
- ###  2️⃣ Comparativa de Pokémon: 
-- Obtener datos de dos Pokémon elegidos por el usuario.
-- Comparar sus estadísticas base (stats) y determinar cuál de ellos tiene mejores estadísticas generales.
-- Presentar los resultados en una tabla comparativa de fácil lectura.
+ - Explicar las principales diferencias entre TypeScript y JavaScript.
+ ###  2️⃣ Instalar TypeScript: 
+- Explicar cada paso para la instalación de TypeScript.
  ### 3️⃣ Evoluciones y Habilidades:
 - Dado un Pokémon específico, buscar su cadena de evolución completa.
 - Listar cada una de las formas evolutivas y sus habilidades.
@@ -27,44 +23,60 @@
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
 ### ◽◾Ejercicio 1:
 #### Diferencias principales entre TypeScript y JavaScript.
-- Tipado:
+- **Tipado:**
   - JavaScript: Tipado dinámico.
   - TypeScript: Tipado estático opcional.
-- Compilación:
-
-JavaScript: Ejecución directa en tiempo de ejecución.
-TypeScript: Requiere una fase de compilación antes de la ejecución.
-Extensión de funcionalidades:
-
-TypeScript: Superset de JavaScript con características adicionales (sistema de tipos estáticos, soporte para ECMAScript más reciente).
-JavaScript: Lenguaje base sin las características avanzadas de TypeScript.
-Compatibilidad:
-
-JavaScript: Ampliamente compatible con navegadores y entornos de ejecución.
-TypeScript: Compatible con cualquier lugar donde se use JavaScript, pero requiere compilación adicional.
-Desarrollo robusto:
-
-TypeScript: El tipado estático y otras características pueden hacer el código más robusto.
-JavaScript: Mayor flexibilidad pero posiblemente más propenso a errores difíciles de detectar.
-Curva de aprendizaje:
-
-JavaScript: Curva de aprendizaje más suave.
-TypeScript: Puede requerir más tiempo debido al sistema de tipos y otras características.
-Herramientas de desarrollo:
-
-JavaScript: Puede utilizarse con cualquier editor que admita JavaScript.
-TypeScript: Beneficia de editores con soporte integrado para TypeScript, ofreciendo una experiencia de desarrollo más enriquecida.
+- **Compilación:**
+  - JavaScript: Ejecución directa en tiempo de ejecución.
+  - TypeScript: Requiere una fase de compilación antes de la ejecución.
+- **Extensión de funcionalidades:**
+  - JavaScript: Lenguaje base sin las características avanzadas de TypeScript.
+  - TypeScript: Superset de JavaScript con características adicionales.
+- **Compatibilidad:**
+  - JavaScript: Ampliamente compatible con navegadores y entornos de ejecución.
+  - TypeScript: Compatible con cualquier lugar donde se use JavaScript, pero requiere compilación adicional.
+- **Desarrollo robusto:**
+  - JavaScript: Mayor flexibilidad pero posiblemente más propenso a errores difíciles de detectar.
+  - TypeScript: El tipado estático y otras características pueden hacer el código más robusto.
+- **Curva de aprendizaje:**
+  - JavaScript: Curva de aprendizaje más suave.
+  - TypeScript: Puede requerir más tiempo debido al sistema de tipos y otras características.
+- **Herramientas de desarrollo:**
+  - JavaScript: Puede utilizarse con cualquier editor que admita JavaScript.
+  - TypeScript: Beneficia de editores con soporte integrado para TypeScript, ofreciendo una experiencia de desarrollo más enriquecida.
   ### ◽◾Ejercicio 2:
-  #### Prueba 1:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Sprint4%20Ejercicio2.0.PNG)
-  -  A continuación se muestra un Gif con el resultado:
+#### Para instalar JavaScript en Windows 10 deberemos realizar los siguientes pasos:
+- Primero deberemos instalar Node.js y npm desde su pagina oficial.
+- Después instalaremos TypeScript globalmente de la siguiente manera:
+  - Abrimos un terminal y escribiremos el siguiente comando:
+    - 'npm install -g typescript'.
+- Además deberemos habilitar la ejecución de Scripts en nuestro equipo:
+  - 'Set-ExecutionPolicy RemoteSigned'.
+- Creamos un proyecto o nos posicionamos en una ya existente, en mi caso en el directorio 'Sprint5'.
+  - Escribiremos el siguiente comando:
+    - 'tsc --init'.
+- Tras esto se nos debería haber creado el fichero 'tsconfig.json' en el cual deberemos configurar de la sigueitne manera:
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true
+  },
+  "include": [
+    "src/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Videos/Sprint%204%20video3.gif)
-  #### Prueba 2:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Sprint4%20Ejercicio2.1.PNG)
-  -  A continuación se muestra un Gif con el resultado:
+ - Crearemos un directorio llamado src y nos posicionamos en el directorio:
+   -  Abrimos la consola y escribiremos lo siguiente:
+      - 'tsc -w'
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Videos/Sprint%204%20video4.gif)
+
   ### ◽◾Ejercicio 3:
   #### Prueba 1:
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/7fb433054bd62eaf3efc93ce6203a842407dcfc5/Sprint4%20Ejercicio3.0.PNG)
