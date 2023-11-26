@@ -1,5 +1,59 @@
 # Boletín Cuarto.
 ## 🔎Analisis del Problema.
+- ¿Qué diferencias existen entre Javascript y Typescript?.
+- **Tipado:**
+  - JavaScript: Tipado dinámico.
+  - TypeScript: Tipado estático opcional.
+- **Compilación:**
+  - JavaScript: Ejecución directa en tiempo de ejecución.
+  - TypeScript: Requiere una fase de compilación antes de la ejecución.
+- **Extensión de funcionalidades:**
+  - JavaScript: Lenguaje base sin las características avanzadas de TypeScript.
+  - TypeScript: Superset de JavaScript con características adicionales.
+- **Compatibilidad:**
+  - JavaScript: Ampliamente compatible con navegadores y entornos de ejecución.
+  - TypeScript: Compatible con cualquier lugar donde se use JavaScript, pero requiere compilación adicional.
+- **Desarrollo robusto:**
+  - JavaScript: Mayor flexibilidad pero posiblemente más propenso a errores difíciles de detectar.
+  - TypeScript: El tipado estático y otras características pueden hacer el código más robusto.
+- **Curva de aprendizaje:**
+  - JavaScript: Curva de aprendizaje más suave.
+  - TypeScript: Puede requerir más tiempo debido al sistema de tipos y otras características.
+- **Herramientas de desarrollo:**
+  - JavaScript: Puede utilizarse con cualquier editor que admita JavaScript.
+  - TypeScript: Beneficia de editores con soporte integrado para TypeScript, ofreciendo una experiencia de desarrollo más enriquecida.
+
+- ¿Cómo configurar su transpiración automática en cada uno de vuestros equipos con nodeJS?
+- Primero deberemos instalar Node.js y npm desde su pagina oficial.
+- Después instalaremos TypeScript globalmente de la siguiente manera:
+  - Abrimos un terminal y escribiremos el siguiente comando:
+    - 'npm install -g typescript'.
+- Además deberemos habilitar la ejecución de Scripts en nuestro equipo:
+  - 'Set-ExecutionPolicy RemoteSigned'.
+- Creamos un proyecto o nos posicionamos en una ya existente, en mi caso en el directorio 'Sprint5'.
+  - Escribiremos el siguiente comando:
+    - 'tsc --init'.
+- Tras esto se nos debería haber creado el fichero 'tsconfig.json' en el cual deberemos configurar de la siguiente manera:
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./src",
+    "rootDir": "./src",
+    "strict": true
+  },
+  "include": [
+    "src/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+ - Crearemos un directorio llamado src y nos posicionamos en el directorio:
+   -  Abrimos la consola y escribiremos lo siguiente:
+      - 'tsc -w'
+
 - Se pide realizar los siguientes ejercicios:
  ###  1️⃣ Diferencias entre TypeSript y JavaScrit:
  - Explicar las principales diferencias entre TypeScript y JavaScript.
@@ -22,59 +76,8 @@
 ## 🧾Pruebas.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
 ### ◽◾Ejercicio 1:
-#### Diferencias principales entre TypeScript y JavaScript.
-- **Tipado:**
-  - JavaScript: Tipado dinámico.
-  - TypeScript: Tipado estático opcional.
-- **Compilación:**
-  - JavaScript: Ejecución directa en tiempo de ejecución.
-  - TypeScript: Requiere una fase de compilación antes de la ejecución.
-- **Extensión de funcionalidades:**
-  - JavaScript: Lenguaje base sin las características avanzadas de TypeScript.
-  - TypeScript: Superset de JavaScript con características adicionales.
-- **Compatibilidad:**
-  - JavaScript: Ampliamente compatible con navegadores y entornos de ejecución.
-  - TypeScript: Compatible con cualquier lugar donde se use JavaScript, pero requiere compilación adicional.
-- **Desarrollo robusto:**
-  - JavaScript: Mayor flexibilidad pero posiblemente más propenso a errores difíciles de detectar.
-  - TypeScript: El tipado estático y otras características pueden hacer el código más robusto.
-- **Curva de aprendizaje:**
-  - JavaScript: Curva de aprendizaje más suave.
-  - TypeScript: Puede requerir más tiempo debido al sistema de tipos y otras características.
-- **Herramientas de desarrollo:**
-  - JavaScript: Puede utilizarse con cualquier editor que admita JavaScript.
-  - TypeScript: Beneficia de editores con soporte integrado para TypeScript, ofreciendo una experiencia de desarrollo más enriquecida.
-  ### ◽◾Ejercicio 2:
-#### Para instalar JavaScript en Windows 10 deberemos realizar los siguientes pasos:
-- Primero deberemos instalar Node.js y npm desde su pagina oficial.
-- Después instalaremos TypeScript globalmente de la siguiente manera:
-  - Abrimos un terminal y escribiremos el siguiente comando:
-    - 'npm install -g typescript'.
-- Además deberemos habilitar la ejecución de Scripts en nuestro equipo:
-  - 'Set-ExecutionPolicy RemoteSigned'.
-- Creamos un proyecto o nos posicionamos en una ya existente, en mi caso en el directorio 'Sprint5'.
-  - Escribiremos el siguiente comando:
-    - 'tsc --init'.
-- Tras esto se nos debería haber creado el fichero 'tsconfig.json' en el cual deberemos configurar de la sigueitne manera:
-{
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true
-  },
-  "include": [
-    "src/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
-}
 
- - Crearemos un directorio llamado src y nos posicionamos en el directorio:
-   -  Abrimos la consola y escribiremos lo siguiente:
-      - 'tsc -w'
+  ### ◽◾Ejercicio 2:
 
 
   ### ◽◾Ejercicio 3:

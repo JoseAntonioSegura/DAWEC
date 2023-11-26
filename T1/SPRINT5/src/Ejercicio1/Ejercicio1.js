@@ -1,4 +1,4 @@
 "use strict";
 // hola-mundo.ts
-var mensaje = "Hola, manolo!";
+var mensaje = "Hello, World!";
 console.log(mensaje);
