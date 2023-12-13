@@ -24,35 +24,35 @@
   - TypeScript: Beneficia de editores con soporte integrado para TypeScript, ofreciendo una experiencia de desarrollo más enriquecida.
 
 - **¿Cómo configurar su transpiración automática en cada uno de vuestros equipos con nodeJS?**
-- Primero deberemos instalar Node.js y npm desde su pagina oficial.
-- Después instalaremos TypeScript globalmente de la siguiente manera:
-  - Abrimos un terminal y escribiremos el siguiente comando:
-    - 'npm install -g typescript'.
-- Además deberemos habilitar la ejecución de Scripts en nuestro equipo:
-  - 'Set-ExecutionPolicy RemoteSigned'.
-- Creamos un proyecto o nos posicionamos en una ya existente, en mi caso en el directorio 'Sprint5'.
-  - Escribiremos el siguiente comando:
-    - 'tsc --init'.
-- Tras esto se nos debería haber creado el fichero 'tsconfig.json' en el cual deberemos configurar de la siguiente manera:
-{
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "outDir": "./src",
-    "rootDir": "./src",
-    "strict": true
-  },
-  "include": [
-    "src/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
-}
+  - Primero deberemos instalar Node.js y npm desde su pagina oficial.
+  - Después instalaremos TypeScript globalmente de la siguiente manera:
+    - Abrimos un terminal y escribiremos el siguiente comando:
+      - 'npm install -g typescript'.
+  - Además deberemos habilitar la ejecución de Scripts en nuestro equipo:
+    - 'Set-ExecutionPolicy RemoteSigned'.
+  - Creamos un proyecto o nos posicionamos en una ya existente, en mi caso en el directorio 'Sprint5'.
+    - Escribiremos el siguiente comando:
+      - 'tsc --init'.
+  - Tras esto se nos debería haber creado el fichero 'tsconfig.json' en el cual deberemos configurar de la siguiente manera:
+  {
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "outDir": "./src",
+      "rootDir": "./src",
+      "strict": true
+    },
+    "include": [
+      "src/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
 
- - Crearemos un directorio llamado src y nos posicionamos en el directorio:
-   -  Abrimos la consola y escribiremos lo siguiente:
-      - 'tsc -w'
+   - Crearemos un directorio llamado src y nos posicionamos en el directorio:
+     -  Abrimos la consola y escribiremos lo siguiente:
+        - 'tsc -w'
 
 - **Se pide realizar los siguientes ejercicios:**
  ###  1️⃣ "Hola Mundo" en TypeScript
