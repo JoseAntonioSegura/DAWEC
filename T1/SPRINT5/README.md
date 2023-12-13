@@ -23,7 +23,7 @@
   - JavaScript: Puede utilizarse con cualquier editor que admita JavaScript.
   - TypeScript: Beneficia de editores con soporte integrado para TypeScript, ofreciendo una experiencia de desarrollo más enriquecida.
 
-- ¿Cómo configurar su transpiración automática en cada uno de vuestros equipos con nodeJS?
+- **¿Cómo configurar su transpiración automática en cada uno de vuestros equipos con nodeJS?**
 - Primero deberemos instalar Node.js y npm desde su pagina oficial.
 - Después instalaremos TypeScript globalmente de la siguiente manera:
   - Abrimos un terminal y escribiremos el siguiente comando:
@@ -54,7 +54,7 @@
    -  Abrimos la consola y escribiremos lo siguiente:
       - 'tsc -w'
 
-- Se pide realizar los siguientes ejercicios:
+- **Se pide realizar los siguientes ejercicios:**
  ###  1️⃣ "Hola Mundo" en TypeScript
 - Objetivo: Crear un programa simple que imprima "Hola Mundo" en la consola.
 - Tareas:
