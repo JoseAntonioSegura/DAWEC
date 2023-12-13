@@ -55,27 +55,50 @@
       - 'tsc -w'
 
 - Se pide realizar los siguientes ejercicios:
- ###  1️⃣ Diferencias entre TypeSript y JavaScrit:
- - Explicar las principales diferencias entre TypeScript y JavaScript.
- ###  2️⃣ Instalar TypeScript: 
-- Explicar cada paso para la instalación de TypeScript.
- ### 3️⃣ Evoluciones y Habilidades:
-- Dado un Pokémon específico, buscar su cadena de evolución completa.
-- Listar cada una de las formas evolutivas y sus habilidades.
-- Incluir un botón que permita al usuario ver más detalles de cualquier habilidad (usando un modal o una nueva vista).
- ###  4️⃣ Explorador de Películas:
-- **Objetivo:** Crear una aplicación web que permita a los usuarios explorar películas basándose en diferentes criterios como género. Usar la API The Movie DB (TMDB API)
-- **Interfaz de Búsqueda:** Desarrollar una interfaz de usuario donde los usuarios puedan ingresar palabras clave o seleccionar filtros para buscar películas por género.
-- **Mostrar Resultados:** Presentar los resultados de la búsqueda en un formato amigable para el usuario, mostrando detalles como el título de la película, año de lanzamiento, resumen y puntuación.
-- **Paginación de Resultados:** Implementar la paginación para los resultados para que los usuarios puedan navegar a través de múltiples páginas de resultados.
- ###  5️⃣ Películas favoritas:
-- Objetivo: Añadir al ejercicio 4 que se puedan añadir/eliminar las película a una lista de favoritos.
+ ###  1️⃣ "Hola Mundo" en TypeScript
+- Objetivo: Crear un programa simple que imprima "Hola Mundo" en la consola.
+- Tareas:
+  - Instalar TypeScript y configurar el entorno de desarrollo.
+  - Crear un archivo holaMundo.ts.
+  - Escribir una función que imprima "Hola Mundo".
+  - Transpilar el archivo TypeScript a JavaScript y ejecutarlo.
+
+ ###  2️⃣ Función con Tipos Básicos con Typescript
+- Objetivo: Escribir una función que acepte un nombre (string) y una edad (number) y devuelva un saludo personalizado.
+- Tareas:
+  - Crear una función saludar que tome dos parámetros: nombre y edad.
+  - La función debe retornar un saludo que incluya ambos datos.
+  - Probar la función con diferentes nombres y edades.
+
+ ### 3️⃣ Uso de Interfaces con Typescript
+- Objetivo: Crear una interfaz para un objeto "Usuario" y utilizarla para crear un usuario.
+- Tareas:
+  - Definir una interfaz Usuario con propiedades como nombre, edad y correo electrónico.
+  - Crear una función que acepte un objeto Usuario y devuelva una descripción del usuario.
+  - Crear varios objetos de prueba y pasarlos a la función.
+
+ ###  4️⃣ Manipulación de Arrays con Typescript
+- Objetivo: Crear una aplicación simple que maneje una lista de tareas (to-do list) usando arrays en TypeScript.
+- Tareas:
+  - Crear un array para almacenar tareas, cada una siendo un objeto con propiedades como id, titulo, y completada.
+  - Implementar funciones para añadir, eliminar y marcar tareas como completadas.
+  - Crear una función que muestre las tareas en la consola.
+
+ ###  5️⃣ Crear una Pokedex con PokeAPI con Typescript
+- Objetivo: Construir una aplicación en TypeScript que utilice la PokeAPI para mostrar información de Pokémon.
+- Tareas:
+  - Estudiar la documentación de la PokeAPI para entender cómo obtener datos de Pokémon.
+  - Crear una interfaz de usuario interactiva utilizando HTML/CSS.
+  - Implementar un campo de búsqueda donde los usuarios puedan escribir el nombre o ID de un Pokémon y obtener resultados en tiempo real.
+  - Diseñar una visualización atractiva de la información del Pokémon, incluyendo imágenes, tipos, estadísticas básicas, movimientos, y evoluciones.
+  - Manejar posibles errores, como búsquedas de Pokémon que no existen.
+
 
 ## ✍Diseño de la solución.
 - Para realizar este apartado de la Tarea de Boletín/Sprint 4, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
 ## 🧾Pruebas.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
-### ◽◾Ejercicio 1:
+  ### ◽◾Ejercicio 1:
 
   ### ◽◾Ejercicio 2:
 
