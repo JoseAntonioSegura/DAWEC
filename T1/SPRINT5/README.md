@@ -1,4 +1,4 @@
-# Boletín Cuarto.
+# Boletín Quinto.
 ## 🔎Analisis del Problema.
 - ¿Qué diferencias existen entre Javascript y Typescript?.
 - **Tipado:**
