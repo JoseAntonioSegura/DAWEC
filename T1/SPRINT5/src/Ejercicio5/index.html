@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeDex</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://storage.ko-fi.com/cdn/useruploads/display/2241bb51-b415-4dbe-ad19-a1cab3d31798_pokemonoverlaypic.png');
+      color: #fff;
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center center;
+      height: 100vh;
+      margin: 0; /* Cambiado el margen a 0 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0;
+    }
+
+    #buscador {
+      position: absolute;
+      top: 25px; /* Cambiado a 10px */
+      left: 80px; /* Cambiado a 10px */
+      width: 80%; 
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 75%;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #pokemonInfo {
+  height: 83vh;
+  width: 146vh;
+  position: absolute;
+  display: flex;
+  left: 3vh;
+  top: 16vh;
+  padding: 20px; /* Añadido espacio interno */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
+
+#pokemonInfo h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+#pokemonInfo p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+    #evolutions {
+      height: 45vh;
+      width: 37vh;
+      position: absolute;
+      display: flex;
+      left: 158vh;
+      top: 22vh;
+    }
+
+    #evolutions h1{
+      position: absolute;
+      top: -70px;
+    }
+
+    #movements {
+      height: 28vh;
+      width: 37vh;
+      position: absolute;
+      display: flex;
+      left: 159vh;
+      top: 79vh;
+    }
+
+    #movements table {
+  width: 80%; /* Cambiado el ancho al 100% para ocupar todo el contenedor */
+  height: 70%; /* Cambiado la altura al 100% para ocupar todo el contenedor */
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+
+#movements th, #movements td {
+  border: 1px solid #555;
+  padding: 2px;
+  text-align: left;
+}
+
+#movements th {
+  background-color: #4caf50;
+  color: white;
+}
+
+#movements h1 {
+  position: absolute;
+  top: -70px;
+}
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+#pokemonInfo {
+  height: 83vh;
+  width: 146vh;
+  position: absolute;
+  left: 3vh;
+  top: 16vh;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#pokemonInfo h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#pokemonInfo table {
+  width: 20%;
+  height: 20%;
+  border-collapse: collapse;
+  margin-top: 10px; /* Espacio entre el párrafo y la tabla */
+}
+
+#pokemonInfo th, #pokemonInfo td {
+  border: 1px solid #555;
+  padding: 8px;
+  text-align: left;
+}
+
+#pokemonInfo th {
+  background-color: #4caf50;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="buscador">
+      <h1>PokeDex</h1>
+      <input type="text" id="pokemonInput" placeholder="Buscar Pokémon">
+      <button onclick="buscarPokemon()">Buscar</button>
+    </div>
+    <div id="evolutions"></div>
+    <div id="movements"></div>
+    <div id="pokemonInfo"></div>
+  </div>
+  <script src="Ejercicio5.js"></script>
+</body>
+</html>
