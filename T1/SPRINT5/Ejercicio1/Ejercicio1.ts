@@ -1,3 +1,3 @@
 // hola-mundo.ts
-let mensaje: string = "Hello, world!";
+let mensaje: string = "Hola Mundo";
 console.log(mensaje);

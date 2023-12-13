@@ -47,4 +47,3 @@ interface Usuario {
   arrayUsuarios.forEach((usuario) => {
     console.log(describirUsuario(usuario));
   });
-  
