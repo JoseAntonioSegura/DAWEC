@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ListaDeFrutas = ({ frutas }) => {
+const ListaDeFrutas = (props) => {
   return (
     <ul>
-      {frutas.map((fruta, index) => (
+      {props.frutas.map((fruta, index) => (
         <li key={index}>
           <img src={fruta.imagen} alt={fruta.nombre} />
           {fruta.nombre}

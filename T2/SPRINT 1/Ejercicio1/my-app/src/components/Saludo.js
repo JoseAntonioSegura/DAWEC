@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Saludo({ nombre }) {
+function Saludo(props) {
   return (
     <div>
-      <p>Hola, {nombre}</p>
+      <p>Hola, {props.nombre}</p>
     </div>
   );
 };
