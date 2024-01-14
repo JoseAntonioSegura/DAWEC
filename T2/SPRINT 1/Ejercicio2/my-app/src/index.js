@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import listaDeFrutas from './components/listaDeFrutas.js';
 
 ReactDOM.render(
   <React.StrictMode>
