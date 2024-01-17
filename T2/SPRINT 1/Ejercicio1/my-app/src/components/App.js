@@ -1,6 +1,7 @@
 import React from 'react';
 import HolaMundo from './HolaMundo';
 import Saludo from './Saludo';
+import './App.css';
 
 const App = () => {
   return (

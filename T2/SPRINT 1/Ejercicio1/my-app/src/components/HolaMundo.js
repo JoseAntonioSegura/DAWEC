@@ -1,11 +1,11 @@
 import React from 'react';
 
-function HolaMundo(){
+function HolaMundo() {
   return (
-    <div>
-      <h1>¡Hola, Mundo!</h1>
+    <div className="container">
+      <h1 className="titulo">¡Hola, Mundo!</h1>
     </div>
   );
-};
+}
 
 export default HolaMundo;
