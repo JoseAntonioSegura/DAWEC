@@ -1,88 +1,175 @@
-// src/components/ToDoApp.js
 import React, { useState, useEffect } from 'react';
 
 function ToDoApp() {
   const [tareas, setTareas] = useState([]);
-  const [categorias, setCategorias] = useState(['Trabajo', 'Personal', 'Estudio']);
+  const [tareasEliminadas, setTareasEliminadas] = useState([]);
   const [nuevaTarea, setNuevaTarea] = useState('');
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todas');
+  const [nuevaCategoria, setNuevaCategoria] = useState('');
+  const [filtroCategoria, setFiltroCategoria] = useState('');
+  const [filtroCompletado, setFiltroCompletado] = useState('');
+  const [mostrarEliminadas, setMostrarEliminadas] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [tareaEditando, setTareaEditando] = useState(null);
 
-  // Cargar tareas desde el Local Storage al iniciar la aplicación
   useEffect(() => {
     const tareasGuardadas = JSON.parse(localStorage.getItem('tareas')) || [];
-    setTareas(tareasGuardadas);
-  }, []); // Se ejecuta solo al montar el componente
+    const tareasEliminadasGuardadas = JSON.parse(localStorage.getItem('tareasEliminadas')) || [];
 
-  // Guardar o actualizar tareas en el Local Storage cada vez que cambian
+    setTareas(tareasGuardadas);
+    setTareasEliminadas(tareasEliminadasGuardadas);
+    setLoading(false);
+  }, []);
+
   useEffect(() => {
-    localStorage.setItem('tareas', JSON.stringify(tareas));
-  }, [tareas]);
+    const handleUnload = () => {
+      localStorage.setItem('tareas', JSON.stringify(tareas));
+      localStorage.setItem('tareasEliminadas', JSON.stringify(tareasEliminadas));
+    };
+
+    window.addEventListener('beforeunload', handleUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleUnload);
+    };
+  }, [tareas, tareasEliminadas]);
 
   const agregarTarea = () => {
     if (nuevaTarea.trim() !== '') {
-      setTareas([...tareas, { texto: nuevaTarea, completa: false, categoria: categoriaSeleccionada }]);
+      setTareas([...tareas, { texto: nuevaTarea, categoria: nuevaCategoria, completa: false }]);
       setNuevaTarea('');
+      setNuevaCategoria('');
     }
   };
 
-  const toggleCompletarTarea = (index) => {
-    const nuevasTareas = [...tareas];
+  const toggleCompletarTarea = (index, eliminada = false) => {
+    const listaTareas = eliminada ? tareasEliminadas : tareas;
+    const nuevasTareas = [...listaTareas];
     nuevasTareas[index].completa = !nuevasTareas[index].completa;
-    setTareas(nuevasTareas);
+
+    if (eliminada) {
+      setTareasEliminadas(nuevasTareas);
+    } else {
+      setTareas(nuevasTareas);
+    }
   };
 
   const eliminarTarea = (index) => {
     const nuevasTareas = [...tareas];
-    nuevasTareas.splice(index, 1);
+    const tareaEliminada = nuevasTareas.splice(index, 1)[0];
     setTareas(nuevasTareas);
+    setTareasEliminadas([...tareasEliminadas, tareaEliminada]);
   };
 
-  const filtrarTareas = () => {
-    if (categoriaSeleccionada === 'Todas') {
-      return tareas;
-    } else {
-      return tareas.filter((tarea) => tarea.categoria === categoriaSeleccionada);
-    }
+  const editarTarea = (index) => {
+    setTareaEditando(index);
   };
+
+  const guardarEdicion = (index, texto) => {
+    const nuevasTareas = [...tareas];
+    nuevasTareas[index].texto = texto;
+    setTareas(nuevasTareas);
+    setTareaEditando(null);
+  };
+
+  const cancelarEdicion = () => {
+    setTareaEditando(null);
+  };
+
+  const filtrarTareas = (tarea) => {
+    const listaTareas = mostrarEliminadas ? tareasEliminadas : tareas;
+
+    return (
+      (filtroCategoria === '' || tarea.categoria === filtroCategoria) &&
+      (filtroCompletado === '' || (filtroCompletado === 'completado' ? tarea.completa : !tarea.completa))
+    );
+  };
+
+  if (loading) {
+    return <p>Cargando...</p>;
+  }
 
   return (
     <div>
       <h1>Lista de Tareas</h1>
       <input
         type="text"
+        placeholder="Nueva Tarea"
         value={nuevaTarea}
         onChange={(e) => setNuevaTarea(e.target.value)}
       />
-      <select
-        value={categoriaSeleccionada}
-        onChange={(e) => setCategoriaSeleccionada(e.target.value)}
-      >
-        <option value="Todas">Todas</option>
-        {categorias.map((categoria) => (
-          <option key={categoria} value={categoria}>
-            {categoria}
-          </option>
-        ))}
-      </select>
-      <button onClick={agregarTarea}>
-        Agregar
-      </button>
+      <input
+        type="text"
+        placeholder="Categoría"
+        value={nuevaCategoria}
+        onChange={(e) => setNuevaCategoria(e.target.value)}
+      />
+      <button onClick={agregarTarea}>Agregar</button>
+
+      <div>
+        <label>Filtrar por Categoría: </label>
+        <select onChange={(e) => setFiltroCategoria(e.target.value)}>
+          <option value="">Todos</option>
+          {Array.from(new Set([...tareas, ...tareasEliminadas].map(tarea => tarea.categoria))).map((categoria, index) => (
+            <option key={index} value={categoria}>
+              {categoria}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label>Filtrar por Completado: </label>
+        <select onChange={(e) => setFiltroCompletado(e.target.value)}>
+          <option value="">Todos</option>
+          <option value="completado">Completado</option>
+          <option value="incompleto">Incompleto</option>
+        </select>
+      </div>
+      <div>
+        <label>
+          Mostrar Eliminadas:
+          <input
+            type="checkbox"
+            checked={mostrarEliminadas}
+            onChange={() => setMostrarEliminadas(!mostrarEliminadas)}
+          />
+        </label>
+      </div>
 
       <ul>
-        {filtrarTareas().map((tarea, index) => (
+        {mostrarEliminadas &&
+          tareasEliminadas.map((tarea, index) => (
+            <li key={index}>
+              <span>{tarea.texto} - {tarea.categoria} (Eliminada)</span>
+            </li>
+          ))}
+        {tareas.filter(filtrarTareas).map((tarea, index) => (
           <li key={index}>
-            <input
-              type="checkbox"
-              checked={tarea.completa}
-              onChange={() => toggleCompletarTarea(index)}
-              disabled={tarea.completa}
-            />
-            {tarea.completa ? (
-              <span style={{ textDecoration: 'line-through' }}>{tarea.texto}</span>
+            {tareaEditando === index ? (
+              <>
+                <input
+                  type="text"
+                  value={tarea.texto}
+                  onChange={(e) => setTareas((prevTareas) => {
+                    const nuevasTareas = [...prevTareas];
+                    nuevasTareas[index].texto = e.target.value;
+                    return nuevasTareas;
+                  })}
+                  onBlur={() => guardarEdicion(index, tarea.texto)}
+                />
+                <button onClick={cancelarEdicion}>Cancelar</button>
+              </>
             ) : (
-              tarea.texto
+              <>
+                <input
+                  type="checkbox"
+                  checked={tarea.completa}
+                  onChange={() => toggleCompletarTarea(index)}
+                />
+                {tarea.completa ? <del>{tarea.texto}</del> : tarea.texto} - {tarea.categoria}
+                <button onClick={() => editarTarea(index)}>Editar</button>
+                <button onClick={() => eliminarTarea(index)}>Eliminar</button>
+              </>
             )}
-            <button onClick={() => eliminarTarea(index)}>Eliminar</button>
           </li>
         ))}
       </ul>
