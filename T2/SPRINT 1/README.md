@@ -1,4 +1,4 @@
-# Boletín Quinto.
+# Boletín 1.
 ## 🔎Analisis del Problema.
 - **¿Ventajas y desventajas de utilizar angular o react?.**
   - **React:**
@@ -50,47 +50,52 @@
 
 
 - **Se pide realizar los siguientes ejercicios:**
- ###  1️⃣ "Hola Mundo" en TypeScript
-- Objetivo: Crear un programa simple que imprima "Hola Mundo" en la consola.
+ ###  1️⃣ Hola Mundo en React y Componente con Props:
 - Tareas:
-  - Instalar TypeScript y configurar el entorno de desarrollo.
-  - Crear un archivo holaMundo.ts.
-  - Escribir una función que imprima "Hola Mundo".
-  - Transpilar el archivo TypeScript a JavaScript y ejecutarlo.
+  - Crea un componente funcional llamado HolaMundo que simplemente renderice un elemento <h1> con el texto "¡Hola, Mundo!".
+  - Renderiza este componente dentro del componente App.
+  - Crea un componente funcional llamado Saludo que acepte una prop nombre.
+  - Este componente debe renderizar un párrafo que diga "Hola, [nombre]".
+  - Renderiza el componente Saludo varias veces en App con diferentes nombres.
 
- ###  2️⃣ Función con Tipos Básicos con Typescript
-- Objetivo: Escribir una función que acepte un nombre (string) y una edad (number) y devuelva un saludo personalizado.
-- Tareas:
-  - Crear una función saludar que tome dos parámetros: nombre y edad.
-  - La función debe retornar un saludo que incluya ambos datos.
-  - Probar la función con diferentes nombres y edades.
 
- ### 3️⃣ Uso de Interfaces con Typescript
-- Objetivo: Crear una interfaz para un objeto "Usuario" y utilizarla para crear un usuario.
+ ###  2️⃣ Lista de Elementos:
 - Tareas:
-  - Definir una interfaz Usuario con propiedades como nombre, edad y correo electrónico.
-  - Crear una función que acepte un objeto Usuario y devuelva una descripción del usuario.
-  - Crear varios objetos de prueba y pasarlos a la función.
+  - Crea un componente ListaDeFrutas que renderice una lista (<ul>) de elementos (<li>).
+  - El componente debe aceptar un array de frutas como prop y renderizar cada fruta en un elemento de lista. (renderizar su imagen)
+  - Prueba el componente con diferentes arrays de frutas.
 
- ###  4️⃣ Manipulación de Arrays con Typescript
-- Objetivo: Crear una aplicación simple que maneje una lista de tareas (to-do list) usando arrays en TypeScript.
-- Tareas:
-  - Crear un array para almacenar tareas, cada una siendo un objeto con propiedades como id, titulo, y completada.
-  - Implementar funciones para añadir, eliminar y marcar tareas como completadas.
-  - Crear una función que muestre las tareas en la consola.
 
- ###  5️⃣ Crear una Pokedex con PokeAPI con Typescript
-- Objetivo: Construir una aplicación en TypeScript que utilice la PokeAPI para mostrar información de Pokémon.
+ ### 3️⃣ Contador de Clicks:
 - Tareas:
-  - Estudiar la documentación de la PokeAPI para entender cómo obtener datos de Pokémon.
-  - Crear una interfaz de usuario interactiva utilizando HTML/CSS.
-  - Implementar un campo de búsqueda donde los usuarios puedan escribir el nombre o ID de un Pokémon y obtener resultados en tiempo real.
-  - Diseñar una visualización atractiva de la información del Pokémon, incluyendo imágenes, tipos, estadísticas básicas, movimientos, y evoluciones.
-  - Manejar posibles errores, como búsquedas de Pokémon que no existen.
+  - Crea un componente Contador que muestre un número (inicialmente 0) y un botón.
+  - Cada vez que el botón sea clickeado, el número debe incrementarse en uno.
+  - Implementa esto utilizando el hook useState.
+
+
+ ###  4️⃣ Aplicación de Tareas:
+- Tareas:
+  - Crea una aplicación de lista de tareas (ToDoApp) que permita al usuario añadir tareas, marcarlas como completadas y borrarlas.
+  - La aplicación debe tener un campo de texto para ingresar nuevas tareas y una lista de tareas mostradas debajo.
+  - Cada tarea en la lista debe tener un checkbox para marcarla como completada y un botón para eliminarla.
+  - Gestiona el estado de las tareas (añadir, completar, eliminar) utilizando useState.
+
+
+ ###  5️⃣ Gestor de Tareas con Estados Complejos y Local Storage:
+- Objetivo: Desarrollar una aplicación de gestión de tareas (to-do list) avanzada en React que no solo permita añadir, marcar y eliminar tareas, sino también categorizarlas y persistir los datos en el navegador usando Local Storage.
+- Tareas:
+  - Diseña una interfaz que permita al usuario introducir tareas con una categoría asociada (por ejemplo, trabajo, personal, estudio).
+  - Proporciona la opción de seleccionar categorías de una lista predefinida o añadir una nueva.
+  - Permite al usuario marcar tareas como completadas, editarlas o eliminarlas.
+  - Añade la funcionalidad para filtrar tareas por categoría o estado (completado, borrado).
+  - Uso de Local Storage para Persistencia de Datos
+  - Guarda las tareas y categorías en el Local Storage del navegador para que no se pierdan al recargar la página.
+  - Carga las tareas guardadas cuando la aplicación se inicia.
+
 
 
 ## ✍Diseño de la solución.
-- Para realizar este apartado de la Tarea de Boletín/Sprint 4, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
+- Para realizar este apartado de la Tarea de Boletín/Sprint 1, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
 ## 🧾Pruebas.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
   ### ◽◾Ejercicio 1:
