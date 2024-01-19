@@ -76,7 +76,6 @@ function ToDoApp() {
   };
 
   const filtrarTareas = (tarea) => {
-    const listaTareas = mostrarEliminadas ? tareasEliminadas : tareas;
 
     return (
       (filtroCategoria === '' || tarea.categoria === filtroCategoria) &&
