@@ -1,15 +1,21 @@
-/* Reset de estilos para eliminar márgenes y rellenos predeterminados */
-body, h1, ul, li, p, button, input, select {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+body > div {
+  background-color: #fff;
+  padding: 30px; /* Aumenté el padding para dar más espacio al contenido */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
 }
 
 h1 {
@@ -17,72 +23,43 @@ h1 {
   margin-bottom: 20px;
 }
 
+body > div > div {
+  display: flex;
+  flex-direction: column; /* Cambié la dirección del flex a columna */
+  margin-bottom: 20px;
+}
+
 input[type="text"] {
-  width: 40%;
+  width: 35%; /* Cambié el ancho al 100% para que ocupe todo el contenedor */
   margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 input[type="text"][placeholder="Categoría"] {
-  width: 20%;
-  margin-bottom: 10px;
-}
-
-input,
-button,
-select {
-  margin-bottom: 10px;
-  padding: 8px;
-  font-size: 16px;
-}
-
-button {
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-input[type="text"] {
-  width: 60%;
-  margin-right: 10px;
-}
-
-li del {
-  text-decoration: line-through;
-  color: #888;
+  margin-left: 10px; /* Añadí un pequeño margen a la izquierda */
 }
 
 button {
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 8px;
-  margin-left: 5px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 15%; /* Ajusté el ancho al 100% para ocupar todo el contenedor */
 }
 
-button.delete {
-  background-color: #dc3545;
+label {
+  margin-right: 10px;
 }
 
 select {
-  width: 40%;
-}
-
-li.deleted span {
-  color: #dc3545;
-}
-
-li.editing {
-  background-color: #ffffcc;
+  padding: 8px;
+  margin: 5px;
+  font-size: 10px;
 }
