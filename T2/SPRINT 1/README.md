@@ -51,8 +51,8 @@
 
 - **Se pide realizar los siguientes ejercicios:**
  ###  1️⃣ Hola Mundo en React y Componente con Props:
-- Tareas:
-  - Crea un componente funcional llamado HolaMundo que simplemente renderice un elemento <h1> con el texto "¡Hola, Mundo!".
+- **Tareas:**
+  - Crea un componente funcional llamado HolaMundo que simplemente renderice un elemento con el texto "¡Hola, Mundo!".
   - Renderiza este componente dentro del componente App.
   - Crea un componente funcional llamado Saludo que acepte una prop nombre.
   - Este componente debe renderizar un párrafo que diga "Hola, [nombre]".
@@ -60,21 +60,21 @@
 
 
  ###  2️⃣ Lista de Elementos:
-- Tareas:
-  - Crea un componente ListaDeFrutas que renderice una lista (<ul>) de elementos (<li>).
+- **Tareas:**
+  - Crea un componente ListaDeFrutas que renderice una lista de elementos.
   - El componente debe aceptar un array de frutas como prop y renderizar cada fruta en un elemento de lista. (renderizar su imagen)
   - Prueba el componente con diferentes arrays de frutas.
 
 
  ### 3️⃣ Contador de Clicks:
-- Tareas:
+- **Tareas:**
   - Crea un componente Contador que muestre un número (inicialmente 0) y un botón.
   - Cada vez que el botón sea clickeado, el número debe incrementarse en uno.
   - Implementa esto utilizando el hook useState.
 
 
  ###  4️⃣ Aplicación de Tareas:
-- Tareas:
+- **Tareas:**
   - Crea una aplicación de lista de tareas (ToDoApp) que permita al usuario añadir tareas, marcarlas como completadas y borrarlas.
   - La aplicación debe tener un campo de texto para ingresar nuevas tareas y una lista de tareas mostradas debajo.
   - Cada tarea en la lista debe tener un checkbox para marcarla como completada y un botón para eliminarla.
@@ -82,8 +82,8 @@
 
 
  ###  5️⃣ Gestor de Tareas con Estados Complejos y Local Storage:
-- Objetivo: Desarrollar una aplicación de gestión de tareas (to-do list) avanzada en React que no solo permita añadir, marcar y eliminar tareas, sino también categorizarlas y persistir los datos en el navegador usando Local Storage.
-- Tareas:
+- **Objetivo:** Desarrollar una aplicación de gestión de tareas (to-do list) avanzada en React que no solo permita añadir, marcar y eliminar tareas, sino también categorizarlas y persistir los datos en el navegador usando Local Storage.
+- **Tareas:**
   - Diseña una interfaz que permita al usuario introducir tareas con una categoría asociada (por ejemplo, trabajo, personal, estudio).
   - Proporciona la opción de seleccionar categorías de una lista predefinida o añadir una nueva.
   - Permite al usuario marcar tareas como completadas, editarlas o eliminarlas.
@@ -110,28 +110,29 @@
 ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-2.gif)
 
   ### ◽◾Ejercicio 3:
-  ## Prueba 1:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3.1.PNG)
+  #### Prueba 1:
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
 ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-3.1.gif)
 
-  ## Prueba 2:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3.2.PNG)
+  #### Prueba 2:
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3-2.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
 ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-3.2.gif)
 
-  ## Prueba 3:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3.3.PNG)
+  #### Prueba 3:
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3-3.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
 ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-3.3.gif)
   ### ◽◾Ejercicio 4:
-  ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/0f96a303467952bc5a773a9aa0ef12ea544b7ee2/Sprint5%20Ejercicio4.PNG)
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-4.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/0f96a303467952bc5a773a9aa0ef12ea544b7ee2/Videos/Sprint5%20Ejercicio4.gif)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-4.gif)
+
   ### ◽◾Ejercicio 5:
   ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/0f96a303467952bc5a773a9aa0ef12ea544b7ee2/Sprint5%20Ejercicio5.PNG)
   -  A continuación se muestra un Gif con el resultado:
