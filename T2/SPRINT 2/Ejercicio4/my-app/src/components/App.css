@@ -1,0 +1,33 @@
+body {
+  background-color: #c3dffb;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Ajusta la altura según tus necesidades */
+}
+
+.titulo {
+  font-size: 2em;
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.saludo-container {
+  background-color: #52dcff48;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.saludo-text {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 30px;
+  text-align: center;
+}
