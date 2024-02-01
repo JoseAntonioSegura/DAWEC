@@ -1,33 +1,27 @@
-body {
-  background-color: #c3dffb;
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
 }
 
-.container {
+.galeria-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px; /* Ajusta la altura según tus necesidades */
 }
 
-.titulo {
-  font-size: 2em;
-  background-color: #3498db;
-  color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.saludo-container {
-  background-color: #52dcff48;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 10px;
-}
-
-.saludo-text {
-  color: #2c3e50;
-  margin: 0;
-  font-size: 30px;
-  text-align: center;
+.modal-content img {
+  max-width: 100%;
+  max-height: 100%;
 }

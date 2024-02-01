@@ -1,19 +1,15 @@
 import React from 'react';
-import HolaMundo from './HolaMundo';
-import Saludo from './Saludo';
-import './App.css';
+import "./App.css";
+import AppTareas from './AppTareas';
 
-const App = () => {
-  return (
-    <div>
-      <HolaMundo />
-      <Saludo nombre="Juan" />
-      <Saludo nombre="María" />
-      <Saludo nombre="Pedro" />
-      <Saludo nombre="Paco" />
-      <Saludo nombre="Nerea" />
-    </div>
-  );
-};
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <AppTareas />
+      </div>
+    );
+  }
+}
 
 export default App;

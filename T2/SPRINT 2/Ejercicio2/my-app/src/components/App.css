@@ -1,33 +1,44 @@
-body {
-  background-color: #c3dffb;
-}
-
-.container {
+.app-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 200px; /* Ajusta la altura según tus necesidades */
+  justify-content: center;
+  height: 100vh;
 }
 
-.titulo {
+.content-container {
+  text-align: center;
+}
+
+h1 {
   font-size: 2em;
+  margin-bottom: 20px;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+button {
+  font-size: 1em;
+  margin: 0 5px;
+  padding: 10px 15px;
+  cursor: pointer;
   background-color: #3498db;
-  color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }
 
-.saludo-container {
-  background-color: #52dcff48;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 10px;
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
 }
 
-.saludo-text {
-  color: #2c3e50;
-  margin: 0;
-  font-size: 30px;
-  text-align: center;
+button:hover {
+  background-color: #2980b9;
 }

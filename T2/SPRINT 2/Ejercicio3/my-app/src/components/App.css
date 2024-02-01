@@ -1,33 +1,57 @@
 body {
-  background-color: #c3dffb;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px; /* Ajusta la altura según tus necesidades */
-}
-
-.titulo {
-  font-size: 2em;
-  background-color: #3498db;
-  color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.saludo-container {
-  background-color: #52dcff48;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 10px;
-}
-
-.saludo-text {
-  color: #2c3e50;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
-  font-size: 30px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.app-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%; /* Asegura que el campo de entrada ocupe todo el ancho disponible */
+}
+
+.tareas-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tareas-list li {
+  margin-bottom: 12px;
+}
+
+button {
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 15px; /* Ajusta el espaciado del botón */
+  margin: 1px;
+  border-radius: 6px;
+  font-size: 12px; /* Ajusta el tamaño de fuente del botón */
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
 }

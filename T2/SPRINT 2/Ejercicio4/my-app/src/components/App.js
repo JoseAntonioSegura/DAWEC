@@ -1,19 +1,15 @@
-import React from 'react';
-import HolaMundo from './HolaMundo';
-import Saludo from './Saludo';
-import './App.css';
+// App.js
 
-const App = () => {
+import React from 'react';
+import GaleriaImagenes from './GaleriaImagenes';
+import './App.css';  // Asegúrate de tener un archivo de estilos CSS para personalizar la apariencia
+
+function App() {
   return (
-    <div>
-      <HolaMundo />
-      <Saludo nombre="Juan" />
-      <Saludo nombre="María" />
-      <Saludo nombre="Pedro" />
-      <Saludo nombre="Paco" />
-      <Saludo nombre="Nerea" />
+    <div className="App">
+      <GaleriaImagenes />
     </div>
   );
-};
+}
 
 export default App;

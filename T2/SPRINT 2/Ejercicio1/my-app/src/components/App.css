@@ -1,33 +1,62 @@
+/* App.css */
 body {
-  background-color: #c3dffb;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px; /* Ajusta la altura según tus necesidades */
-}
-
-.titulo {
-  font-size: 2em;
-  background-color: #3498db;
-  color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.saludo-container {
-  background-color: #52dcff48;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 10px;
-}
-
-.saludo-text {
-  color: #2c3e50;
+  font-family: 'Arial', sans-serif;
   margin: 0;
-  font-size: 30px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.content-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 400px;
   text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px; /* Añadido para separar el botón del formulario */
+}
+
+button:hover {
+  background-color: #45a049;
 }

@@ -1,19 +1,17 @@
+// App.js
 import React from 'react';
-import HolaMundo from './HolaMundo';
-import Saludo from './Saludo';
+import FormularioRegistro from './FormularioRegistro';
 import './App.css';
 
 const App = () => {
   return (
-    <div>
-      <HolaMundo />
-      <Saludo nombre="Juan" />
-      <Saludo nombre="María" />
-      <Saludo nombre="Pedro" />
-      <Saludo nombre="Paco" />
-      <Saludo nombre="Nerea" />
+    <div className="app-container">
+      <div className="content-container">
+        <h1>Formulario de Registro</h1>
+        <FormularioRegistro />
+      </div>
     </div>
   );
-};
+}
 
 export default App;
