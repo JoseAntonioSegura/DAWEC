@@ -3,6 +3,15 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: rgb(55, 62, 69); /* Fondo azul oscuro */
+  color: #ecf0f1; /* Texto blanco */
+}
+
+.crystal-container {
+  background-color: rgb(43, 61, 79, 0.6); /* Fondo azul oscuro para el contenedor crystal */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efecto crystal */
+  padding: 20px; /* Añadido de espacio interno */
 }
 
 .content-container {
@@ -10,8 +19,9 @@
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
+  color: #00d0ff; /* Texto azul */
 }
 
 div {
@@ -19,19 +29,21 @@ div {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  color: #00d0ff; /* Texto azul */
 }
 
 button {
-  font-size: 1em;
+  font-size: 1.2em;
   margin: 0 5px;
-  padding: 10px 15px;
+  padding: 12px 20px;
   cursor: pointer;
-  background-color: #3498db;
+  background-color: #03b3e9; /* Fondo rojo */
   color: #fff;
   border: none;
   border-radius: 5px;
   outline: none;
+  transition: background-color 0.3s ease;
 }
 
 button:disabled {
@@ -40,5 +52,5 @@ button:disabled {
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #01ff6f; /* Fondo rojo oscuro al pasar el ratón */
 }

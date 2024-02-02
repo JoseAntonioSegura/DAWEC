@@ -2,19 +2,31 @@ import React, { Component } from 'react';
 
 class ModalImagen extends Component {
   render() {
-    const { imagen, cerrarModal, cargarSiguiente, cargarAnterior } = this.props;
+    const {
+      imagen,
+      cerrarModal,
+      cargarSiguiente,
+      cargarAnterior
+    } = this.props;
 
     return (
       <div className="modal-overlay" onClick={cerrarModal}>
         <div className="modal-content">
-          <button onClick={cargarAnterior}>&lt; Anterior</button>
           <img src={imagen.urls.regular} alt={imagen.alt_description} />
-          <button onClick={cargarSiguiente}>Siguiente &gt;</button>
+        </div>
+        <div className="modal-nav-container">
+          <button className="modal-nav-btn" onClick={cargarAnterior}>
+            Anterior
+          </button>
+          <button className="modal-nav-btn" onClick={cargarSiguiente}>
+            Siguiente
+          </button>
         </div>
       </div>
     );
   }
 }
+
 
 class GaleriaImagenesAvanzada extends Component {
   constructor(props) {
@@ -54,9 +66,9 @@ class GaleriaImagenesAvanzada extends Component {
     const { paginaActual, terminosBusqueda } = this.state;
     const apiKey = 'Po9duUfJvUiqbu_g1uFsbM4DgPooDRZC7JEArAz4pk0';
     const perPage = 10;
-  
+
     let url = `https://api.unsplash.com/search/photos?client_id=${apiKey}&page=${paginaActual}&per_page=${perPage}&query=${terminosBusqueda}`;
-  
+
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -72,6 +84,7 @@ class GaleriaImagenesAvanzada extends Component {
       })
       .catch(error => console.error('Error al cargar imágenes:', error.message));
   };
+
   handleBuscar = () => {
     this.setState({ imagenes: [], paginaActual: 1, totalPaginas: 1 }, this.cargarImagenes);
   };
@@ -82,6 +95,32 @@ class GaleriaImagenesAvanzada extends Component {
 
   cerrarModal = () => {
     this.setState({ imagenSeleccionada: null });
+  };
+
+  cargarSiguienteImagen = () => {
+    const { imagenes, imagenSeleccionada } = this.state;
+    const currentIndex = imagenes.findIndex(
+      (imagen) => imagen.id === imagenSeleccionada.id
+    );
+
+    if (currentIndex < imagenes.length - 1) {
+      this.setState({ imagenSeleccionada: null }, () => {
+        this.abrirModal(imagenes[currentIndex + 1]);
+      });
+    }
+  };
+
+  cargarAnteriorImagen = () => {
+    const { imagenes, imagenSeleccionada } = this.state;
+    const currentIndex = imagenes.findIndex(
+      (imagen) => imagen.id === imagenSeleccionada.id
+    );
+
+    if (currentIndex > 0) {
+      this.setState({ imagenSeleccionada: null }, () => {
+        this.abrirModal(imagenes[currentIndex - 1]);
+      });
+    }
   };
 
   render() {
@@ -110,11 +149,12 @@ class GaleriaImagenesAvanzada extends Component {
         </div>
 
         {imagenSeleccionada && (
-          <div className="modal-overlay" onClick={this.cerrarModal}>
-            <div className="modal-content">
-              <img src={imagenSeleccionada.urls.regular} alt={imagenSeleccionada.alt_description} />
-            </div>
-          </div>
+          <ModalImagen
+            imagen={imagenSeleccionada}
+            cerrarModal={this.cerrarModal}
+            cargarAnterior={this.cargarAnteriorImagen}
+            cargarSiguiente={this.cargarSiguienteImagen}
+          />
         )}
       </div>
     );

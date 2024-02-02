@@ -1,13 +1,13 @@
-// App.js
+
 
 import React from 'react';
-import GaleriaImagenes from './GaleriaImagenes';
-import './App.css';  // Asegúrate de tener un archivo de estilos CSS para personalizar la apariencia
+import GaleriaImagenesAvanzada from './GaleriaImagenesAvanzada';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <GaleriaImagenes />
+      <GaleriaImagenesAvanzada />
     </div>
   );
 }

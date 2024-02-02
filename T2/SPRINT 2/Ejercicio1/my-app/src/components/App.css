@@ -54,6 +54,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  width: 106%;
   margin-top: 10px; /* Añadido para separar el botón del formulario */
 }
 
