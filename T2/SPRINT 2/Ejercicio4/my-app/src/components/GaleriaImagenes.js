@@ -1,5 +1,3 @@
-// GaleriaImagenes.js
-
 import React, { Component } from 'react';
 
 class GaleriaImagenes extends Component {

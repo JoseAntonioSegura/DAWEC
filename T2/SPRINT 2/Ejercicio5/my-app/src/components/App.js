@@ -1,7 +1,5 @@
-
-
 import React from 'react';
-import GaleriaImagenesAvanzada from './GaleriaImagenesAvanzada';
+import GaleriaImagenesAvanzada from './GaleriaImagenesAvanzada.js';
 import './App.css';
 
 function App() {

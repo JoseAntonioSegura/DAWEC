@@ -7,24 +7,35 @@ class Cronometro extends Component {
     this.state = {
       tiempo: 0,
       activo: false,
+      tiempoInicio: 0,
     };
 
     this.intervalo = null;
   }
 
+  formatearTiempo = (tiempo) => {
+    const segundos = Math.floor(tiempo / 1000);
+    const milisegundos = Math.round(tiempo % 1000);
+
+    // Asegurarse de tener dos dígitos en los milisegundos
+    const milisegundosFormateados = milisegundos < 10 ? `00${milisegundos}` : milisegundos < 100 ? `0${milisegundos}` : milisegundos;
+
+    return `${segundos < 10 ? '0' : ''}${segundos}.${milisegundosFormateados}`;
+  };
+
   iniciarCronometro = () => {
     if (!this.state.activo) {
       console.log('Iniciando cronómetro');
-      this.setState({ activo: true });
+      this.setState({
+        activo: true,
+        tiempoInicio: Date.now() - this.state.tiempo,
+      });
 
       this.intervalo = setInterval(() => {
-        this.setState((prevState) => {
-          console.log('Segundos transcurridos:', prevState.tiempo + 1);
-          return {
-            tiempo: prevState.tiempo + 1,
-          };
+        this.setState({
+          tiempo: Date.now() - this.state.tiempoInicio,
         });
-      }, 1000);
+      }, 10);
     } else {
       console.log('El cronómetro ya está activo.');
     }
@@ -45,6 +56,7 @@ class Cronometro extends Component {
     this.setState({
       tiempo: 0,
       activo: false,
+      tiempoInicio: 0,
     });
     clearInterval(this.intervalo);
   };
@@ -59,7 +71,7 @@ class Cronometro extends Component {
 
     return (
       <div>
-        <h2>Tiempo transcurrido: {tiempo} segundos</h2>
+        <h2>Tiempo transcurrido: {this.formatearTiempo(tiempo)} segundos</h2>
         <button onClick={this.iniciarCronometro} disabled={activo}>
           Iniciar
         </button>
