@@ -43,19 +43,19 @@
  ###  5️⃣ Galería de Imágenes con Carga Asíncrona, Modal y Funcionalidades Avanzadas:
 - **Objetivo:** Crear una galería de imágenes avanzada (GaleriaImagenesAvanzada) que cargue imágenes de una API, las muestre en un grid, permita abrir una imagen en un modal, y ofrezca funcionalidades adicionales como búsqueda y paginación.
 - **Tareas:**
-- **Componente de Clase GaleriaImagenesAvanzada:** Crea un componente con un estado que incluya un arreglo de imágenes, la imagen seleccionada para el modal, la página actual y términos de búsqueda.
-- **Carga Asíncrona de Imágenes:**
-  - En componentDidMount, realiza una petición a una API de imágenes (como Unsplash) para cargar imágenes y guardarlas en el estado.
-  - Implementa la paginación para cargar más imágenes cuando el usuario llegue al final del grid o mediante botones de navegación.
-- **Búsqueda de Imágenes:**
-  - Añade un campo de búsqueda para permitir a los usuarios buscar imágenes por términos específicos.
-  - Actualiza la galería de acuerdo a los resultados de la búsqueda.
-- **Componente Modal para Visualización de Imágenes:**
-  - Implementa un componente modal que se abra al hacer clic en una imagen, mostrando la imagen en tamaño completo.
-  - Añade funcionalidades al modal, como botones para navegar entre imágenes en la galería.
-- **Renderizado y Prueba:**
-  - El método render debe mostrar un campo de búsqueda, un grid de imágenes, controles de paginación y, si una imagen está seleccionada, el modal con la imagen.
-  - Renderiza GaleriaImagenesAvanzada en App y prueba la carga de imágenes, la funcionalidad del modal, la búsqueda y la paginación.
+  - **Componente de Clase GaleriaImagenesAvanzada:** Crea un componente con un estado que incluya un arreglo de imágenes, la imagen seleccionada para el modal, la página actual y términos de búsqueda.
+  - **Carga Asíncrona de Imágenes:**
+    - En componentDidMount, realiza una petición a una API de imágenes (como Unsplash) para cargar imágenes y guardarlas en el estado.
+    - Implementa la paginación para cargar más imágenes cuando el usuario llegue al final del grid o mediante botones de navegación.
+  - **Búsqueda de Imágenes:**
+    - Añade un campo de búsqueda para permitir a los usuarios buscar imágenes por términos específicos.
+    - Actualiza la galería de acuerdo a los resultados de la búsqueda.
+  - **Componente Modal para Visualización de Imágenes:**
+    - Implementa un componente modal que se abra al hacer clic en una imagen, mostrando la imagen en tamaño completo.
+    - Añade funcionalidades al modal, como botones para navegar entre imágenes en la galería.
+  - **Renderizado y Prueba:**
+    - El método render debe mostrar un campo de búsqueda, un grid de imágenes, controles de paginación y, si una imagen está seleccionada, el modal con la imagen.
+    - Renderiza GaleriaImagenesAvanzada en App y prueba la carga de imágenes, la funcionalidad del modal, la búsqueda y la paginación.
 
 ## ✍Diseño de la solución.
 - Para realizar este apartado de la Tarea de Boletín/Sprint 1, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
