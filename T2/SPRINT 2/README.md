@@ -1,98 +1,61 @@
-# Boletín 1.
+# Boletín 2.
 ## 🔎Analisis del Problema.
-- **¿Ventajas y desventajas de utilizar angular o react?.**
-  - **React:**
-    - **Ventajas:**
-      - Framework:
-        - Implementa todo el modelo MVC.
-      - Más flexibilididad y modular:
-        - Se centra en la construcción de componentes reutilizables y sigue un enfoque más modular.
-      - Más sencillo:
-        - La curva de aprendizaje de React es más suave frente a Angular para desarrolladores con experiencia en JavaScript y HTML.
-      - VirtualDOM: 
-        - Usa Virtual DOM de forma directa, de manera que el rendimiento suele ser más eficiente para manipulaciones directas en DOM.
-      - Herramientas:
-        - Proporciona más libertad en la elección de herramientas y bibliotecas adicionales. 
-      -  Comunidad:
-         -  Cuenta con una gran comunidad y un amplio ecosistema de bibliotecas.
-    - **Desventajas:**
-      - Configuración manual:
-        - Requiere una configuración más manual y la elección de herramientas adicionales.
- - **Angular:**
-    - **Ventajas:**
-      - Estructura y opinión::
-        - Tiene una estructura más completa y opinionada.
-      - TypeScript:
-        - Angular está construido con TypeScript, lo que brinda la ventaja de un sistema de tipos estático que puede ayudar a detectar errores en tiempo de compilación.
-      - Inyección de dependencias:
-        -  Incluye un sistema de inyección de dependencias integrado, lo que facilita la gestión de las dependencias y la escritura de pruebas unitarias.
-      - Herramientas:
-        - Proporciona más libertad en la elección de herramientas y bibliotecas adicionales. 
-      -  Herramientas integradas:
-         - Proporciona herramientas integradas para tareas como enrutamiento, validación de formularios y gestión del estado, lo que puede acelerar el desarrollo.
-    - **Desventajas:**
-      - FrameWork: 
-        - Solo muestra la vista del modelo MVC.
-      - Dificultad:
-        - Tiene una curva de aprendizaje más pronunciada.
-      - Mayor tamaño de la biblioteca:
-        - La biblioteca de Angular es más grande en comparación con React, lo que puede afectar el tiempo de carga de la aplicación.
-      - Menos flexibilidad:
-        - Angular puede ser menos flexible en términos de integración con otras bibliotecas y herramientas.
-
-    - **Diferencia Principal:**
-          - Template (Angular):
-            - Permiten una clara separación de las lógicas del componente y la presentación visual. 
-          - JSX (React):
-            - Facilita la incorporación de lógica y manipulación de datos directamente en la representación de la interfaz de usuario.
-            -  La sintaxis de JSX puede ser considerada más expresiva y fácil de leer por algunos desarrolladores, ya que se asemeja a la estructura de XML o HTML.
-            -  JSX ofrece una mayor flexibilidad y poder, ya que permite el uso de JavaScript directamente en la representación del componente.
-
-
 - **Se pide realizar los siguientes ejercicios:**
- ###  1️⃣ Hola Mundo en React y Componente con Props:
+ ###  1️⃣ Formulario de Registro con Validación:
+- **Objetivo:** Crear un componente de clase`FormularioRegistro` que incluya campos para el nombre de usuario, correo electrónico y contraseña, con validación de cada campo. 
 - **Tareas:**
-  - Crea un componente funcional llamado HolaMundo que simplemente renderice un elemento con el texto "¡Hola, Mundo!".
-  - Renderiza este componente dentro del componente App.
-  - Crea un componente funcional llamado Saludo que acepte una prop nombre.
-  - Este componente debe renderizar un párrafo que diga "Hola, [nombre]".
-  - Renderiza el componente Saludo varias veces en App con diferentes nombres.
+  - Crea un componente de clase `FormularioRegistro` con un estado que contenga valores para nombre de usuario, correo electrónico, contraseña y mensajes de error para cada campo.
+  - Agrega métodos para manejar los cambios en cada campo del formulario y validar los datos ingresados (por ejemplo, verificar que el correo tenga un formato válido).
+  - El método `render` debe mostrar un formulario con campos para el nombre de usuario, correo electrónico, contraseña y mensajes de error correspondientes.
+  - Implementa estilos condicionales para mostrar los campos de texto en rojo si hay un error de validación.
+  - Renderiza `FormularioRegistro` en `App` y prueba la validación del formulario.
 
-
- ###  2️⃣ Lista de Elementos:
+ ###  2️⃣ Cronómetro con Inicio, Pausa y Reinicio:
+- **Objetivo:** Crear un componente de clase `Cronometro` que funcione como un cronómetro con botones para iniciar, pausar y reiniciar el tiempo.
 - **Tareas:**
-  - Crea un componente ListaDeFrutas que renderice una lista de elementos.
-  - El componente debe aceptar un array de frutas como prop y renderizar cada fruta en un elemento de lista. (renderizar su imagen)
-  - Prueba el componente con diferentes arrays de frutas.
+  - Crea un componente de clase `Cronometro` con un estado que incluya el tiempo transcurrido y si el cronómetro está activo o no.
+  - Implementa un método para iniciar el cronómetro que use `setInterval` para actualizar el tiempo cada segundo.
+  - Agrega métodos para pausar y reiniciar el cronómetro, actualizando el estado según corresponda.
+  - El método `componentWillUnmount` debe limpiar el intervalo para evitar fugas de memoria.
+  - El método `render` debe mostrar el tiempo transcurrido y botones para iniciar, pausar y reiniciar el cronómetro.
+  - Renderiza `Cronometro` en `App` y prueba su funcionalidad.
 
-
- ### 3️⃣ Contador de Clicks:
+ ### 3️⃣ Aplicación de Tareas con Filtrado y Almacenamiento Local:
+- **Objetivo:** Crear una aplicación de tareas (`AppTareas`) que permita añadir, eliminar, filtrar tareas y almacenarlas en el almacenamiento local del navegador.
 - **Tareas:**
-  - Crea un componente Contador que muestre un número (inicialmente 0) y un botón.
-  - Cada vez que el botón sea clickeado, el número debe incrementarse en uno.
-  - Implementa esto utilizando el hook useState.
+  - Crea un componente de clase `AppTareas` con un estado que incluya un arreglo de tareas, un campo de texto para nuevas tareas y un filtro de estado (todas, completadas, pendientes).
+  - Implementa funcionalidades para añadir nuevas tareas, marcarlas como completadas, eliminar tareas y filtrarlas según su estado.
+  - Usa `componentDidMount` para cargar las tareas almacenadas en el almacenamiento local y `componentDidUpdate` para actualizar el almacenamiento local cuando las tareas cambien.
+  - El método `render` debe mostrar un formulario para nuevas tareas, botones para filtrar, y una lista de tareas que refleje el filtro seleccionado.
+  - Renderiza `AppTareas` en `App` y prueba todas las funcionalidades.
 
 
- ###  4️⃣ Aplicación de Tareas:
+ ###  4️⃣ Galería de Imágenes con Carga Asíncrona y Modal:
+- **Objetivo:** Crear una galería de imágenes (`GaleriaImagenes`) que cargue imágenes de una API, las muestre en un grid y permita abrir una imagen en un modal al hacer clic.
 - **Tareas:**
-  - Crea una aplicación de lista de tareas (ToDoApp) que permita al usuario añadir tareas, marcarlas como completadas y borrarlas.
-  - La aplicación debe tener un campo de texto para ingresar nuevas tareas y una lista de tareas mostradas debajo.
-  - Cada tarea en la lista debe tener un checkbox para marcarla como completada y un botón para eliminarla.
-  - Gestiona el estado de las tareas (añadir, completar, eliminar) utilizando useState.
+  - Crea un componente de clase `GaleriaImagenes` con un estado que incluya un arreglo de imágenes y la imagen seleccionada para el modal.
+  - En `componentDidMount`, realiza una petición a una API de imágenes (como Unsplash o similar) para cargar imágenes y guardarlas en el estado.
+  - Implementa un componente modal que se abra al hacer clic en una imagen, mostrando la imagen en tamaño completo.
+  - El método `render` debe mostrar un grid de imágenes y, si una imagen está seleccionada, el modal con la imagen.
+  - Renderiza `GaleriaImagenes` en `App` y prueba la carga de imágenes y la funcionalidad del modal.
 
 
- ###  5️⃣ Gestor de Tareas con Estados Complejos y Local Storage:
-- **Objetivo:** Desarrollar una aplicación de gestión de tareas (to-do list) avanzada en React que no solo permita añadir, marcar y eliminar tareas, sino también categorizarlas y persistir los datos en el navegador usando Local Storage.
+ ###  5️⃣ Galería de Imágenes con Carga Asíncrona, Modal y Funcionalidades Avanzadas:
+- **Objetivo:** Crear una galería de imágenes avanzada (GaleriaImagenesAvanzada) que cargue imágenes de una API, las muestre en un grid, permita abrir una imagen en un modal, y ofrezca funcionalidades adicionales como búsqueda y paginación.
 - **Tareas:**
-  - Diseña una interfaz que permita al usuario introducir tareas con una categoría asociada (por ejemplo, trabajo, personal, estudio).
-  - Proporciona la opción de seleccionar categorías de una lista predefinida o añadir una nueva.
-  - Permite al usuario marcar tareas como completadas, editarlas o eliminarlas.
-  - Añade la funcionalidad para filtrar tareas por categoría o estado (completado, borrado).
-  - Uso de Local Storage para Persistencia de Datos
-  - Guarda las tareas y categorías en el Local Storage del navegador para que no se pierdan al recargar la página.
-  - Carga las tareas guardadas cuando la aplicación se inicia.
-
-
+- **Componente de Clase GaleriaImagenesAvanzada:** Crea un componente con un estado que incluya un arreglo de imágenes, la imagen seleccionada para el modal, la página actual y términos de búsqueda.
+- **Carga Asíncrona de Imágenes:**
+  - En componentDidMount, realiza una petición a una API de imágenes (como Unsplash) para cargar imágenes y guardarlas en el estado.
+  - Implementa la paginación para cargar más imágenes cuando el usuario llegue al final del grid o mediante botones de navegación.
+- **Búsqueda de Imágenes:**
+  - Añade un campo de búsqueda para permitir a los usuarios buscar imágenes por términos específicos.
+  - Actualiza la galería de acuerdo a los resultados de la búsqueda.
+- **Componente Modal para Visualización de Imágenes:**
+  - Implementa un componente modal que se abra al hacer clic en una imagen, mostrando la imagen en tamaño completo.
+  - Añade funcionalidades al modal, como botones para navegar entre imágenes en la galería.
+- **Renderizado y Prueba:**
+  - El método render debe mostrar un campo de búsqueda, un grid de imágenes, controles de paginación y, si una imagen está seleccionada, el modal con la imagen.
+  - Renderiza GaleriaImagenesAvanzada en App y prueba la carga de imágenes, la funcionalidad del modal, la búsqueda y la paginación.
 
 ## ✍Diseño de la solución.
 - Para realizar este apartado de la Tarea de Boletín/Sprint 1, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.

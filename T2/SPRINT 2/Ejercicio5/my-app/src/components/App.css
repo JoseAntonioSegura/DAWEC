@@ -1,33 +1,57 @@
-body {
-  background-color: #c3dffb;
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
 }
 
-.container {
+.galeria-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rellena el contenedor manteniendo la proporción */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Añade estilos para evitar espacios en blanco entre las filas */
+.galeria-grid::after {
+  content: '';
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Fondo más oscuro */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px; /* Ajusta la altura según tus necesidades */
+  z-index: 1000; /* Asegura que el modal esté sobre la galería */
 }
 
-.titulo {
-  font-size: 2em;
-  background-color: #3498db;
-  color: #ffffff;
-  padding: 20px;
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto; /* Añade desplazamiento si la imagen es muy grande */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Mantiene la proporción de la imagen */
   border-radius: 8px;
-  text-align: center;
-}
-
-.saludo-container {
-  background-color: #52dcff48;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 10px;
-}
-
-.saludo-text {
-  color: #2c3e50;
-  margin: 0;
-  font-size: 30px;
-  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombreado más fuerte */
 }
