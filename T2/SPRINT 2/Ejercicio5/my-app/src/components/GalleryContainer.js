@@ -13,7 +13,9 @@ class GalleryContainer extends Component {
       paginaActual: 1,
       terminosBusqueda: '',
       totalPaginas: 1,
+      busquedaRealizada: false // Nuevo estado para indicar si se ha realizado una búsqueda
     };
+    
   }
 
   componentDidMount() {
@@ -39,19 +41,21 @@ class GalleryContainer extends Component {
   };
 
   cargarImagenes = () => {
-    const { paginaActual, terminosBusqueda } = this.state;
+    const { imagenes, terminosBusqueda } = this.state;
     const apiKey = 'Po9duUfJvUiqbu_g1uFsbM4DgPooDRZC7JEArAz4pk0';
-    const perPage = 10;
-
-    let url = `https://api.unsplash.com/search/photos?client_id=${apiKey}&page=${paginaActual}&per_page=${perPage}&query=${terminosBusqueda}`;
-
+    const perPage = 5; // Redefinimos el número de imágenes por página
+  
+    // Calculamos el número de página para cargar basado en el número de imágenes actuales y el tamaño de la página
+    const nextPage = Math.ceil((imagenes.length + 1) / perPage) + 1;
+  
+    let url = `https://api.unsplash.com/search/photos?client_id=${apiKey}&page=${nextPage}&per_page=${perPage}&query=${terminosBusqueda}`;
+  
     fetch(url)
       .then(response => response.json())
       .then(data => {
         if (data.results && Array.isArray(data.results)) {
           this.setState(prevState => ({
             imagenes: [...prevState.imagenes, ...data.results],
-            paginaActual: paginaActual + 1,
             totalPaginas: Math.ceil(data.total / perPage),
           }));
         } else {
@@ -60,6 +64,8 @@ class GalleryContainer extends Component {
       })
       .catch(error => console.error('Error al cargar imágenes:', error.message));
   };
+  
+  
 
   cargarSiguientesImagenes = () => {
     this.setState(
@@ -70,7 +76,7 @@ class GalleryContainer extends Component {
   
 
   handleBuscar = () => {
-    this.setState({ imagenes: [], paginaActual: 1, totalPaginas: 1 }, this.cargarImagenes);
+    this.setState({ imagenes: [], paginaActual: 1, totalPaginas: 1, busquedaRealizada: true }, this.cargarImagenes);
   };
 
   abrirModal = (imagen) => {
@@ -114,6 +120,14 @@ class GalleryContainer extends Component {
     );
   };
 
+  cargarImagenesAnteriores = () => {
+    this.setState(prevState => {
+      const paginaAnterior = Math.max(prevState.paginaActual - 1, 1); // Calculamos la página anterior
+      return { paginaActual: paginaAnterior, imagenes: [] }; // Reiniciamos las imágenes para cargar las anteriores
+    }, this.cargarImagenes); // Llamamos a cargarImagenes después de actualizar el estado
+  };
+  
+
   render() {
     const { imagenes, imagenSeleccionada, terminosBusqueda, tituloImagenSeleccionada } = this.state;
 
@@ -125,11 +139,14 @@ class GalleryContainer extends Component {
           onSearch={this.handleBuscar}
         />
 
-        <ImageGrid
-          images={imagenes}
-          onImageClick={this.abrirModal}
-          onLoadMore={this.cargarSiguientesImagenes}
-        />
+<ImageGrid
+  images={imagenes}
+  onImageClick={this.abrirModal}
+  onLoadMore={this.cargarSiguientesImagenes}
+  onLoadPrevious={this.cargarImagenesAnteriores}
+  busquedaRealizada={this.state.busquedaRealizada} // Pasamos el estado como una propiedad
+/>
+
 
         {imagenSeleccionada && (
           <ModalImage

@@ -1,8 +1,12 @@
 import React from 'react';
 
-const ImageGrid = ({ images, onImageClick, onLoadMore }) => {
-  const startIndex = Math.max(0, images.length - 5);  // Índice de inicio para las últimas 5 imágenes
-  const imagesToShow = images.slice(startIndex);
+const ImageGrid = ({ images, onImageClick, onLoadMore, onLoadPrevious, busquedaRealizada }) => {
+  const perPage = 5; // Definimos el número de imágenes por página
+  const totalPages = Math.ceil(images.length / perPage); // Calculamos el número total de páginas
+  const currentPageIndex = Math.max(totalPages - 1, 0); // Índice de la página actual (comenzando desde 0)
+  const startIndex = currentPageIndex * perPage; // Índice de inicio para las imágenes actuales
+
+  const imagesToShow = images.slice(startIndex, startIndex + perPage); // Seleccionamos las imágenes para mostrar
 
   return (
     <div className="galeria-grid">
@@ -17,11 +21,23 @@ const ImageGrid = ({ images, onImageClick, onLoadMore }) => {
           </div>
         ))}
       </div>
-      <button className="load-more-btn" onClick={onLoadMore}>
-        Cargar Más
-      </button>
+      {busquedaRealizada && ( // Mostrar los botones solo si se ha realizado una búsqueda
+        <div className="button-container">
+          <button className="load-less-btn" onClick={onLoadPrevious}>
+            Cargar Anteriores
+          </button>
+        </div>
+      )}
+      {busquedaRealizada && ( // Mostrar los botones solo si se ha realizado una búsqueda
+        <div className="button-container">
+          <button className="load-more-btn" onClick={onLoadMore}>
+            Cargar Más
+          </button>
+        </div>
+      )}
     </div>
   );
 };
+
 
 export default ImageGrid;

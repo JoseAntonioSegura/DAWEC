@@ -80,6 +80,8 @@ body {
 .modal-content img {
  max-width: 90%;
   max-height: 90%;
+  border-radius: 8px;
+  border: 2px solid black;
 }
 
 .modal-nav-container {
@@ -151,14 +153,6 @@ button {
   width: 200px; /* Ancho fijo para cada imagen */
 }
 
-.load-more-btn {
-  margin-top: 10px;
-  margin-left: 800px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
 .galeria-grid {
   text-align: right;
 }
@@ -176,15 +170,15 @@ button {
 
 .load-more-btn {
   min-width: 100px;
-  min-height: 400px;
+  min-height: 190px;
   padding: 8px 12px;
   background-color: #3498db;
   color: #fff;
   border: none;
   cursor: pointer;
   position: absolute;
-  right: 80px;
-  top: 110px;
+  right: 81px;
+  top: 120px;
 }
 .button-container {
   display: flex;
@@ -192,13 +186,27 @@ button {
   margin-top: 10px;  /* Ajusta según sea necesario */
 }
 
-.load-more-btn {
+.load-less-btn {
+  max-width: 110px;
+  min-height: 190px;
+  padding: 8px 12px;
   background-color: #3498db;
   color: #fff;
   border: none;
   cursor: pointer;
-  min-width: 100px;
-  padding: 8px 12px;
-  border-radius: 5px;
-  margin-right: 10px;  /* Ajusta según sea necesario */
+  position: absolute;
+  right: 80px;
+  top: 320px;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para hacer el texto más legible */
+  color: white; /* Color del texto */
+  padding: 8px; /* Espaciado interno para el texto */
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total del elemento */
+  text-align: center; /* Alinea el texto en el centro */
 }
