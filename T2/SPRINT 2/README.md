@@ -62,49 +62,30 @@
 ## 🧾Pruebas.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
   ### ◽◾Ejercicio 1:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-1.PNG)
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/T2-Sprint2-1.png)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-1.gif)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/Videos/T2-Sprint2-1.gif)
   ### ◽◾Ejercicio 2:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-2.PNG)
+![Excel Ejercicio]()
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-2.gif)
+![Ejercicio]()
 
   ### ◽◾Ejercicio 3:
-  #### Prueba 1:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3.PNG)
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/T2-Sprint2-3.png)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-3.1.gif)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/Videos/T2-Sprint2-3.gif)
 
-  #### Prueba 2:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3-2.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-3.2.gif)
-
-  #### Prueba 3:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-3-3.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-3.3.gif)
   ### ◽◾Ejercicio 4:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-4.PNG)
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/T2-Sprint2-4.png)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-4.gif)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/Videos/T2-Sprint2-4.gif)
 
   ### ◽◾Ejercicio 5:
-#### Prueba 1:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-5-1.PNG)
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/T2-Sprint2-5.png)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-5.1.gif)
-
-  #### Prueba 2:
-![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/T2-Sprint1-5-2.PNG)
-  -  A continuación se muestra un Gif con el resultado:
-
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/db86f06fd67746d7401eab5ebd409dcb431dbb44/Videos/T2-SPRINT1-5.2.gif)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/Videos/T2-Sprint2-5.gif)
