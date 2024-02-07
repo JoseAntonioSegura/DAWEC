@@ -32,8 +32,10 @@ class Cronometro extends Component {
       });
 
       this.intervalo = setInterval(() => {
-        this.setState({
-          tiempo: Date.now() - this.state.tiempoInicio,
+        this.setState(prevState => ({
+          tiempo: Date.now() - prevState.tiempoInicio,
+        }), () => {
+          console.log(`Tiempo transcurrido: ${this.formatearTiempo(this.state.tiempo)} segundos`);
         });
       }, 10);
     } else {

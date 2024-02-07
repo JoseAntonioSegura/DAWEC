@@ -8,7 +8,6 @@ const App = () => {
       <div className="crystal-container"> {/* Agregué la clase crystal-container aquí */}
         <div className="content-container">
           <h1>Cronómetro</h1>
-          <Cronometro />
         </div>
       </div>
     </div>
