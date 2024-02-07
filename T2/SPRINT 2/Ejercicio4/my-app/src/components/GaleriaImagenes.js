@@ -10,7 +10,7 @@ class GaleriaImagenes extends Component {
   }
 
   componentDidMount() {
-    const apiKey = 'Po9duUfJvUiqbu_g1uFsbM4DgPooDRZC7JEArAz4pk0';  // Reemplaza 'tu_api_key' con tu clave de acceso de Unsplash
+    const apiKey = 'Po9duUfJvUiqbu_g1uFsbM4DgPooDRZC7JEArAz4pk0';
     fetch(`https://api.unsplash.com/photos/?client_id=${apiKey}&per_page=10`)
       .then(response => {
         if (!response.ok) {
