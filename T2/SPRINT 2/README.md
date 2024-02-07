@@ -67,10 +67,10 @@
 
 ![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/Videos/T2-Sprint2-1.gif)
   ### ◽◾Ejercicio 2:
-![Excel Ejercicio]()
+![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/5e030d30203d132cf4a8e20669315c2f8dde95f5/T2-Sprint2-2.PNG)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio]()
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/aeb9e833ea13eca60fefe1751374d3324458b8de/Videos/T2-SPRINT2-2.gif)
 
   ### ◽◾Ejercicio 3:
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/b1a9a48670ed5666aa017618e951f9bd1874aa1f/T2-Sprint2-3.png)
