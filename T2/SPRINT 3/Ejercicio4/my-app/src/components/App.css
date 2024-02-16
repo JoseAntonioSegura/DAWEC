@@ -1,0 +1,59 @@
+/* App.css */
+.App {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Estilos adicionales según necesidades */
+  input[type="email"],
+  input[type="password"],
+  input[type="text"],
+  input[type="file"],
+  button {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    color: #007bff;
+  }
+  
+  img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+    border-radius: 50%;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  /* Colores adicionales */
+  label {
+    color: #007bff;
+  }
+  
+  a {
+    color: #007bff;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  

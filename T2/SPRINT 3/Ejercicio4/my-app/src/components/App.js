@@ -5,6 +5,7 @@ import Profile from './PerfilUsuario.js';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import './App.css';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBVLVms7BICyc_h0OuimRIatjOfjrImBkQ",
