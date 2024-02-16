@@ -1,31 +1,29 @@
+// Registro.js
 import React, { useState } from 'react';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
-const Registro = ({ onRegister }) => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: ''
-  });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+const Registro = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onRegister(formData);
+  const handleRegister = async () => {
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      // Registro exitoso
+    } catch (error) {
+      console.error('Error de registro:', error);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} />
-      <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-      <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
-      <button type="submit">Register</button>
-    </form>
+    <div>
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Correo electrónico" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Contraseña" />
+      <button onClick={handleRegister}>Registrarse</button>
+    </div>
   );
 };
 

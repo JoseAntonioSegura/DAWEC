@@ -1,31 +1,29 @@
+// Login.js
 import React, { useState } from 'react';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
-const Login = ({ onLogin }) => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: ''
-  });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onLogin(formData);
+  const handleLogin = async () => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      // Inicio de sesión exitoso
+    } catch (error) {
+      console.error('Error de inicio de sesión:', error);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} />
-      <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-      <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Correo electrónico" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Contraseña" />
+      <button onClick={handleLogin}>Iniciar sesión</button>
+    </div>
   );
 };
 
