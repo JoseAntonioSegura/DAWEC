@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Login from './InicioSesion.js';
 import Registro from './Registro.js';
-import PerfilUsuario from './PerfilUsuario.js';
+import Profile from './PerfilUsuario.js';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -15,6 +15,7 @@ const firebaseConfig = {
   appId: "1:842356372247:web:dd1ea60ffbbd8057bebd52",
   measurementId: "G-YEB32NGB9Z"
 };
+
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
@@ -26,7 +27,7 @@ const App = () => {
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(user => {
       setUser(user);
-      setIsProfileOpen(!!user);
+      setIsProfileOpen(!!user); // Actualiza el estado de apertura del perfil cuando cambia el usuario
     });
     return unsubscribe;
   }, []);
@@ -39,36 +40,16 @@ const App = () => {
     }
   };
 
-  const onUpdateProfile = async (formData) => {
-    const { name, email, password, newProfileImage } = formData;
-
-    try {
-      await firebase.auth().currentUser.updateProfile({
-        displayName: name,
-        photoURL: newProfileImage || user.photoURL,
-      });
-
-      if (email !== user.email) {
-        await firebase.auth().currentUser.updateEmail(email);
-      }
-
-      if (password) {
-        await firebase.auth().currentUser.updatePassword(password);
-      }
-
-      console.log("Perfil actualizado con éxito");
-    } catch (error) {
-      console.error('Error al actualizar el perfil:', error);
-    }
+  const onUpdateProfile = (formData) => {
+    console.log(formData);
   };
 
   return (
     <div className="App">
       <h1>User Authentication Demo</h1>
-      {isProfileOpen && user ? (
+      {user ? (
         <div>
-          <PerfilUsuario user={user} onUpdateProfile={onUpdateProfile} />
-          <button onClick={handleLogout}>Cerrar Sesión</button>
+          {isProfileOpen && <Profile user={user} onLogout={handleLogout} onUpdateProfile={onUpdateProfile} />}
         </div>
       ) : (
         <div>

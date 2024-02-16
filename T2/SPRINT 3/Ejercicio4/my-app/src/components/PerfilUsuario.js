@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
   const [formData, setFormData] = useState({
-    name: user.name,
+    name: user.displayName,
     email: user.email,
-    profileImage: user.profileImage,
-    newProfileImage: null // Para almacenar la nueva imagen de perfil seleccionada por el usuario
+    profileImage: user.photoURL,
+    newProfileImage: null,
+    newPassword: '', // Campo para nueva contraseña
   });
+  
 
   const handleChange = (e) => {
     setFormData({
@@ -18,15 +22,37 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
   const handleImageChange = (e) => {
     setFormData({
       ...formData,
-      newProfileImage: e.target.files[0] // Almacena la nueva imagen de perfil seleccionada por el usuario
+      newProfileImage: e.target.files[0]
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Lógica para actualizar el perfil
-    onUpdateProfile(formData);
+  
+    try {
+      const currentUser = firebase.auth().currentUser;
+  
+      if (currentUser) {
+        if (formData.newPassword !== '') {
+          await currentUser.updatePassword(formData.newPassword);
+        }
+        
+        await currentUser.updateEmail(formData.email);
+  
+        await currentUser.updateProfile({
+          displayName: formData.name,
+          photoURL: formData.profileImage
+        });
+  
+        onUpdateProfile(formData);
+      } else {
+        console.error('Usuario no autenticado.');
+      }
+    } catch (error) {
+      console.error('Error al actualizar perfil:', error);
+    }
   };
+  
 
   return (
     <div>
@@ -40,6 +66,11 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
         <label>
           Correo electrónico:
           <input type="email" name="email" value={formData.email} onChange={handleChange} />
+        </label>
+        <br />
+        <label>
+          Nueva Contraseña:
+          <input type="password" name="newPassword" value={formData.newPassword} onChange={handleChange} />
         </label>
         <br />
         <label>
