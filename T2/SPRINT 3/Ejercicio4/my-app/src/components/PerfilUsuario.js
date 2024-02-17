@@ -38,15 +38,20 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const currentUser = firebase.auth().currentUser;
-
+  
       if (currentUser) {
         if (formData.newPassword !== '') {
           await currentUser.updatePassword(formData.newPassword);
         }
-
+        
+        // Actualizar correo electrónico si hay un nuevo correo electrónico
+        if (formData.newEmail !== '') {
+          await currentUser.updateEmail(formData.newEmail);
+        }
+  
         if (formData.newProfileImage) {
           const storageRef = firebase.storage().ref();
           const fileRef = storageRef.child(`profile_images/${currentUser.uid}`);
@@ -66,12 +71,7 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
             displayName: formData.name
           });
         }
-        
-
-        await currentUser.updateProfile({
-          displayName: formData.name
-        });
-
+  
         onUpdateProfile(formData);
       } else {
         setError('Usuario no autenticado.');
@@ -81,6 +81,7 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
       setError('Hubo un error al actualizar el perfil.');
     }
   };
+  
 
   return (
     <div>
