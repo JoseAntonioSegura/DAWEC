@@ -8,13 +8,13 @@ import 'firebase/compat/firestore';
 import './App.css';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBVLVms7BICyc_h0OuimRIatjOfjrImBkQ",
-  authDomain: "sprint3-f102c.firebaseapp.com",
-  projectId: "sprint3-f102c",
-  storageBucket: "sprint3-f102c.appspot.com",
-  messagingSenderId: "842356372247",
-  appId: "1:842356372247:web:dd1ea60ffbbd8057bebd52",
-  measurementId: "G-YEB32NGB9Z"
+  apiKey: "AIzaSyCa9YadlZulNHGLc_nwJphJOGqxGhCmZow",
+  authDomain: "sprint3-ejercicio4.firebaseapp.com",
+  projectId: "sprint3-ejercicio4",
+  storageBucket: "sprint3-ejercicio4.appspot.com",
+  messagingSenderId: "169021084528",
+  appId: "1:169021084528:web:eccc6a64812a94297e75b5",
+  measurementId: "G-L1R92B3B3X"
 };
 
 if (!firebase.apps.length) {

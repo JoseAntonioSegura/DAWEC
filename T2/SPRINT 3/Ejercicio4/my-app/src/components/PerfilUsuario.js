@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+// PerfilUsuario.js
+import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import 'firebase/compat/storage'; // Importa el módulo de Storage
+import 'firebase/compat/storage';
 
 const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
   const [formData, setFormData] = useState({
-    name: user.displayName,
-    email: user.email,
-    profileImage: user.photoURL,
+    name: user.displayName || '',
+    email: user.email || '',
+    profileImage: user.photoURL || '',
     newProfileImage: null,
-    newPassword: '', // Campo para nueva contraseña
-    newEmail: '' // Campo para nuevo correo electrónico
+    newPassword: '',
+    newEmail: ''
   });
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      profileImage: user.photoURL || ''
+    }));
+  }, [user.photoURL]);
 
   const handleChange = (e) => {
     setFormData({
@@ -38,14 +47,26 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
           await currentUser.updatePassword(formData.newPassword);
         }
 
-        if (formData.newEmail !== '') {
-          await currentUser.updateEmail(formData.newEmail);
-        }
-
-        // Subir la nueva imagen de perfil al almacenamiento en la nube
         if (formData.newProfileImage) {
-          // Código para subir imagen
+          const storageRef = firebase.storage().ref();
+          const fileRef = storageRef.child(`profile_images/${currentUser.uid}`);
+          await fileRef.put(formData.newProfileImage);
+          const imageUrl = await fileRef.getDownloadURL();
+          await currentUser.updateProfile({
+            displayName: formData.name,
+            photoURL: imageUrl // Actualiza la URL de la imagen de perfil
+          });
+          // Actualiza formData.profileImage con la nueva URL de la imagen
+          setFormData(prevFormData => ({
+            ...prevFormData,
+            profileImage: imageUrl
+          }));
+        } else {
+          await currentUser.updateProfile({
+            displayName: formData.name
+          });
         }
+        
 
         await currentUser.updateProfile({
           displayName: formData.name
@@ -53,16 +74,18 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
 
         onUpdateProfile(formData);
       } else {
-        console.error('Usuario no autenticado.');
+        setError('Usuario no autenticado.');
       }
     } catch (error) {
       console.error('Error al actualizar perfil:', error);
+      setError('Hubo un error al actualizar el perfil.');
     }
   };
 
   return (
     <div>
       <h2>Perfil de Usuario</h2>
+      {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <label>
           Nombre:
@@ -91,8 +114,9 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
         <br />
         <button type="submit">Guardar Cambios</button>
         <button onClick={onLogout}>Logout</button>
+        
       </form>
-      <img src={formData.profileImage} alt="Imagen de perfil" />
+      {formData.profileImage && <img src={formData.profileImage} alt="Imagen de perfil" />}
     </div>
   );
 };
