@@ -13,7 +13,7 @@
   - Configurar las rutas en tu componente App:
     - Utiliza <Switch> y <Route> para configurar tus rutas. Debes tener una ruta para el componente Inicio (por ejemplo, /) y otra para PerfilUsuario (por ejemplo, /usuario/:id).
     - Usar <Link> para la navegación:
-  - En el componente Inicio, crea enlaces (<Link>) que lleven al usuario a diferentes perfiles, modificando el ID en la URL.
+    - En el componente Inicio, crea enlaces (<Link>) que lleven al usuario a diferentes perfiles, modificando el ID en la URL.
   - Extracción de parámetros de ruta en PerfilUsuario:
     - En PerfilUsuario, utiliza useParams para obtener el ID del usuario de la URL y mostrarlo en la página.
 
@@ -49,8 +49,8 @@
     - Almacena los resultados de la búsqueda en el estado del componente.
     - Muestra una lista de películas que coincidan con el término de búsqueda. Cada elemento de la lista debe incluir al menos el título de la película y el año de lanzamiento.
   - Manejo de errores y estados de carga:
-  - Implementa un indicador de carga que se muestre mientras se está realizando la petición a la API.
-  - Muestra mensajes adecuados en caso de que la búsqueda no arroje resultados o si ocurre un error en la petición.
+    - Implementa un indicador de carga que se muestre mientras se está realizando la petición a la API.
+    - Muestra mensajes adecuados en caso de que la búsqueda no arroje resultados o si ocurre un error en la petición.
 
 
 
@@ -80,7 +80,7 @@
 
 
 ## ✍Diseño de la solución.
-- Para realizar este apartado de la Tarea de Boletín/Sprint 1, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
+- Para realizar este apartado de la Tarea de Boletín/Sprint 3, primeramente he revisado la teoría y complementado el uso con ChatGPT se empezará a realizar los ejercicios indicados anteriormente.
 ## 🧾Pruebas.
 - Tras haber finalizado los ejercicios de forma satisfactoria, se van a complementar los resultados con gifs.
   ### ◽◾Ejercicio 1:
