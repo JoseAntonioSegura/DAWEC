@@ -1,4 +1,3 @@
-// PerfilUsuario.js
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
@@ -14,6 +13,7 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
     newEmail: ''
   });
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); // Estado de carga
 
   useEffect(() => {
     setFormData(prevFormData => ({
@@ -38,6 +38,7 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Inicia el estado de carga
   
     try {
       const currentUser = firebase.auth().currentUser;
@@ -79,6 +80,8 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
     } catch (error) {
       console.error('Error al actualizar perfil:', error);
       setError('Hubo un error al actualizar el perfil.');
+    } finally {
+      setLoading(false); // Finaliza el estado de carga, ya sea éxito o error
     }
   };
   
@@ -113,7 +116,7 @@ const PerfilUsuario = ({ user, onUpdateProfile, onLogout }) => {
           <input type="file" accept="image/*" onChange={handleImageChange} />
         </label>
         <br />
-        <button type="submit">Guardar Cambios</button>
+        <button type="submit" disabled={loading}>{loading ? 'Guardando...' : 'Guardar Cambios'}</button>
         <button onClick={onLogout}>Logout</button>
         
       </form>
