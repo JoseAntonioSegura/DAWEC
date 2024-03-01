@@ -24,10 +24,10 @@
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/d67985f1e9879638bff8a3e1691ab273d159b9af/T2-Sprint4-1.png)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/455ddef693b0d555368bd542363941a478b2accb/T2-Sprint4-1.png)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/455ddef693b0d555368bd542363941a478b2accb/Videos/T2-Sprint4-1.gif)
 
 #### Prueba 2
 ![Excel Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/d67985f1e9879638bff8a3e1691ab273d159b9af/T2-Sprint4-2.png)
   -  A continuación se muestra un Gif con el resultado:
 
-![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/455ddef693b0d555368bd542363941a478b2accb/T2-Sprint4-2.png)
+![Ejercicio](https://github.com/JoseAntonioSegura/Imagenes/blob/455ddef693b0d555368bd542363941a478b2accb/Videos/T2-Sprint4-2.gif)
