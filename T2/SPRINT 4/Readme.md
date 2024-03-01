@@ -1,7 +1,7 @@
 # Boletín 4.
 ## 🔎Analisis del Problema.
 - **Se pide realizar el siguiete ejercicio:**
-- 
+
  ###  1️⃣ Carrito de la compra:
 - **Objetivo:** Desarrollar un componente `CarritoCompra` que permita a los usuarios seleccionar artículos, gestionar su carrito de compras y procesar la compra.
 
